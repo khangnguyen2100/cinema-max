@@ -1,0 +1,74 @@
+body {
+  background-image: linear-gradient(170deg, rgb(15, 22, 36), rgb(5, 7, 11));
+  color: #fff !important;
+}
+
+a {
+  text-decoration: unset !important;
+}
+
+.navbar-brand {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.navbar {
+  margin-bottom: 0 !important;
+  background: rgb(21, 31, 50) !important;
+  padding: 10px 0 !important;
+}
+
+.navbar-brand {
+  color: rgb(50, 138, 241) !important;
+}
+
+.navbar-nav a {
+  font-size: 16px !important;
+}
+.navbar-nav a:hover {
+  color: rgb(50, 138, 241) !important;
+}
+
+.thumbnail {
+  display: block;
+  margin-bottom: 30px !important;
+  line-height: 1.42857143;
+  padding: 0 !important;
+  background-color: transparent !important;
+  color: rgb(50, 138, 241) !important;
+  text-align: left;
+  border: 0 !important;
+  -webkit-transition: border 0.2s ease-in-out;
+  -o-transition: border 0.2s ease-in-out;
+  transition: border 0.2s ease-in-out;
+  overflow: hidden;
+}
+.thumbnail .thumbnail-img {
+  border-radius: 5px !important;
+  overflow: hidden;
+}
+
+.caption {
+  padding: 10px 0 !important;
+  color: white !important;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+.caption:hover {
+  color: rgb(50, 138, 241) !important;
+  transition: all 0.2s ease;
+}
+
+.sections {
+  display: flex;
+  align-items: center;
+  column-gap: 25px;
+  margin: 25px 0;
+  margin-bottom: 15px;
+}
+
+.sections-name {
+  font-size: 24px;
+  font-weight: 700;
+  text-transform: capitalize;
+}
