@@ -1,0 +1,457 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --primary-color : #D70018;
+}
+
+li {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+}
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
+  position: relative;
+}
+html {
+  position: relative;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header {
+  width: 100%;
+  max-width: 100%;
+  background-color: #eee;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 5;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px;
+
+}
+.logo {
+  width: 30%;
+}
+.logo a {
+  font-weight: 700;
+  font-size: 20px;
+  color : var(--primary-color);
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+}
+.search {
+  width: 30%;
+  position: relative;
+}
+.search-icon {
+  position: absolute;
+  top: 50%;
+  right : 5px;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.search-icon i {
+  font-weight: 700;
+  font-size: 24px;
+  cursor: pointer;
+}
+.search input {
+  width: 100%;
+  padding: 10px;
+  color : #333;
+  font-weight: 500;
+  outline: none;
+  border: 1px solid #666;
+  border-radius: 5px;
+}
+.search input::placeholder {
+  color : #666;
+}
+.search input:focus {
+  border: 1px solid #444;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+.nav-list {
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.nav-item {
+
+}
+.nav-item:not(:last-child) {
+  margin-right: 30px;
+}
+.nav-link {
+  text-transform: capitalize;
+  color : var(--primary-color);
+}
+main {
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+.heading {
+  font-weight: 600;
+  font-size: 24px;
+  text-transform: capitalize;
+  margin-bottom: 10px;
+}
+.render-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.header-icon {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 7px 25px;
+  border-radius: 7px;
+  background-color: var(--primary-color);
+  color : #fff;
+  font-weight: 500;
+}
+.header-icon i {
+  margin-left: 10px;
+}
+thead tr th {
+  background: #ddd;
+  padding: 5px 0;
+}
+tbody tr td {
+  padding: 5px;
+  text-align: justify;
+}
+tbody tr td{
+  border: 1px solid #333;
+  border-top: 0;
+  border-right: 0;
+}
+tbody {
+  margin: 0 auto;
+}
+th {
+  text-transform: capitalize;
+}
+.td-btn button {
+  margin: auto;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+tbody tr td {
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom : auto;
+}
+tbody tr td:last-child {
+  border-right: 1px solid #333;
+}
+.table td:nth-child(2) {
+  overflow: hidden;
+  //white-space: nowrap;
+  text-overflow: ellipsis;
+}
+img {
+  max-width: 100%;
+  object-fit: cover;
+}
+.brand-img {
+  width: 90px;
+  height: 15px;
+}
+.product-img {
+  width: 40%;
+  object-fit: cover;
+}
+.footer {
+  background-color: #eee;
+  width: 100%;
+  padding: 20px ;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+
+}
+.popup {
+  display: block;
+  position: fixed;
+  top: 30%;
+  left : 50%;
+  z-index: 20;
+  transform: translate(-50%, -50%);
+  padding: 30px;
+  min-height: 350px;
+  max-width: 1200px;
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid #111;
+  background-color: #efefef;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+}
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,.35);
+  z-index: 10;
+}
+.close-icon {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color : var(--primary-color);
+  font-size: 22px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.container-form {
+  height: 100vh;
+  width: 100%;
+  background-color: #F4D03F;
+  background-image: linear-gradient(132deg, #978b5b 0%, #16A085 100%);
+}
+
+.bg-blur {
+  background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.8) 50%, transparent 50%), url(./img/nat-10.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  max-height: 80%;
+  max-width: 90%;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 5px;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.form {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  max-width: 40%;
+  max-height: 100%;
+  width: 100%;
+  height: 100%;
+  padding-top: 30px;
+  padding-left: 70px;
+}
+
+.heading-form {
+  font-size: 36px;
+  color: #0a263c;
+  text-transform: capitalize;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.form-group:not(:last-child) {
+  margin-bottom: 25px;
+  width: 100%;
+}
+
+.form-group label {
+  color: #333333;
+}
+
+.form-group input {
+  margin-top: 10px;
+  border-radius: 5px;
+  width: 100%;
+  border: 0;
+  padding: 10px 15px;
+  color: #0a263c;
+  background-color: #fff;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
+}
+
+.form-group input:focus {
+  transition: all 0.2s ease;
+  outline: none;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  border: 1px solid #D70018;
+}
+
+.sign-up {
+  width: 100%;
+}
+
+.sign-up .heading-form {
+  font-size: 20px;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 0;
+  font-family: "Roboto" serif;
+}
+
+.btn-form {
+  text-transform: capitalize;
+  font-size: 18px;
+  padding: 15px 0;
+  width: 100%;
+  text-align: center;
+  margin: 15px 0;
+  border-radius: 10px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-bg-form.btn-form {
+  padding: 15px 10px;
+  color: #fff;
+  background-color: #D70018;
+  border: 0;
+  border: 1px solid transparent;
+}
+
+.btn-bg-form input {
+  font-weight: 500;
+  color: #fff;
+}
+
+.btn-bg-form a {
+  display: block;
+}
+
+.btn-bg-form:hover {
+  color: #D70018;
+  background-color: transparent;
+  transition: all 0.3s ease;
+  border: 1px solid #D70018;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.btn-trans-form {
+  color: #0a263c;
+  border: 1px solid #0a263c;
+}
+
+.btn-trans-form:hover {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.add-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-top: 30px;
+}
+.add-item {
+  width: calc(33.33% - 20px);
+  display: flex;
+  align-items: center;
+}
+.add-item-label {
+  font-weight: 500;
+  text-transform: capitalize;
+  font-size: 18px;
+  margin-right: 15px;
+  min-width: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.add-item-input {
+  width: 100%;
+  padding: 5px ;
+  outline: none;
+  border: 1px solid transparent;
+  transition: all .2s ease;
+  border-radius: 8px;
+}
+.add-item-input:focus {
+  outline: none;
+  border: 1px solid #D70018;
+  transition: all .2s ease;
+}
+.add-action {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  background-color: #D70018 !important;
+  padding: 10px 35px;
+  border-radius: 8px;
+  color : #fff;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+.action-btn {
+  color : #D70018;
+  font-weight: 500;
+}
+.action-btn:hover {
+  text-decoration: underline;
+}
+@media screen and (max-width: 970px) {
+  .bg-blur {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.6) 100%), url(./img/nat-10.jpg);
+    max-height: 90%;
+    max-width: 90%;
+  }
+  .form {
+    max-width: 80%;
+    max-height: 100%;
+    padding: 20px;
+    margin: 0 auto;
+  }
+  .form-group label {
+    color: #fff;
+  }
+  .heading-form {
+    color: #D70018;
+  }
+  .btn-trans-form {
+    border: 1px solid #D70018;
+    color: #D70018;
+  }
+}
+@media screen and (max-width: 500px) {
+  .bg-blur {
+    max-height: 100%;
+    max-width: 100%;
+  }
+  .form {
+    padding: 0 20px;
+    max-width: 100%;
+    padding-top: 20px;
+  }
+}
