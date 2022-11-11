@@ -28,7 +28,7 @@
     <nav class="container nav">
       <div class="logo">
         <a href="./index.php">
-          BK Store
+          Cinema-max
         </a>
       </div>
       <ul class="nav-list">

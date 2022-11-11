@@ -11,7 +11,7 @@
   }
   function updateRow() {
     $page = $_GET['page'];
-    if($_POST['update']) {
+    if(isset($_POST['update']) && $_POST['update']) {
       global $db;
       global $keys;
       $rowId = $_GET['rowId'];
@@ -31,7 +31,7 @@
       $stmt->execute();
       echo("<script>window.location.assign('index.php?page=$page');</script>");
     }
-    if(isset($_POST['close-icon']) && $_POST['close-icon']) {
-      header('Location: index.php');
-    }
+    // if(isset($_POST['close-icon']) && $_POST['close-icon']) {
+    //   header("Location: index.php?page=$page");
+    // }
   }

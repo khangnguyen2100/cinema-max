@@ -1,19 +1,23 @@
 <?php
   function addRow() {
-
-    if(isset($_GET['page']) && isset($_POST['add']) && $_POST['add']) {
+    if(isset($_GET['page']) && isset($_POST['add'])) {
       global $db;
       global $keys;
       $page = $_GET['page'];
       $head = '';
       $body = '';
-      foreach ($keys as $key => $value) {
-        if($key == count($keys) - 1) {
-          $head .= $value;
-          $body .= "'$_POST[$value]'" ;
+      foreach ($keys as $key => $keyName) {
+        if($key === 0 && $_POST[$keyName] == '') {
+          $head .= $keyName.',';
+          $body .= createId() .',';
         } else {
-          $head .= $value.',';
-          $body .= "'$_POST[$value]'" .',';
+          if($key == count($keys) - 1) {
+            $head .= $keyName;
+            $body .= "'$_POST[$keyName]'" ;
+          } else {
+            $head .= $keyName.',';
+            $body .= "'$_POST[$keyName]'" .',';
+          }
         }
       }
       $sql = "INSERT INTO ".$page." ( $head )
@@ -21,10 +25,9 @@
       $db->exec($sql);
       header('Location: index.php?page='.$page);
     }
-    
-    if(isset($_GET['page']) && isset($_POST['close-icon']) && $_POST['close-icon']) {
-      $page = $_GET['page'];
-      header('Location: index.php?page='.$page);
-    }
+    // if(isset($_GET['page']) && isset($_POST['close-icon']) && $_POST['close-icon']) {
+    //   $page = $_GET['page'];
+    //   header('Location: index.php?page='.$page);
+    // }
   }
 ?>

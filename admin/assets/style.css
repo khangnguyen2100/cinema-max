@@ -139,13 +139,19 @@ main {
 .header-icon i {
   margin-left: 10px;
 }
+tbody tr {
+  max-height: 200px;
+  overflow: hidden;
+}
 thead tr th {
   background: #ddd;
-  padding: 5px 0;
+  padding: 5px;
 }
 tbody tr td {
   padding: 5px;
   text-align: justify;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 tbody tr td{
   border: 1px solid #333;
@@ -352,10 +358,10 @@ img {
 }
 
 .btn-bg-form:hover {
-  color: #D70018;
+  color: var(--primary-color);
   background-color: transparent;
   transition: all 0.3s ease;
-  border: 1px solid #D70018;
+  border: 1px solid var(--primary-color);
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
@@ -400,26 +406,32 @@ img {
 }
 .add-item-input:focus {
   outline: none;
-  border: 1px solid #D70018;
+  border: 1px solid var(--primary-color);
   transition: all .2s ease;
 }
 .add-action {
   position: absolute;
   right: 20px;
   bottom: 20px;
-  background-color: #D70018 !important;
+  background-color: var(--primary-color) !important;
   padding: 10px 35px;
   border-radius: 8px;
   color : #fff;
   font-weight: 600;
   text-transform: capitalize;
+  cursor: pointer;
 }
 .action-btn {
-  color : #D70018;
+  color : var(--primary-color);
   font-weight: 500;
 }
 .action-btn:hover {
   text-decoration: underline;
+}
+.radio-group {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
 }
 @media screen and (max-width: 970px) {
   .bg-blur {
