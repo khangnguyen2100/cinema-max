@@ -8,6 +8,7 @@
 }
 :root {
   --primary-color : #D70018;
+  --text-color: #333;
 }
 
 li {
@@ -59,7 +60,6 @@ html {
   padding: 10px 0;
 }
 .search {
-  width: 30%;
   position: relative;
 }
 .search-icon {
@@ -93,20 +93,48 @@ html {
   box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
 .nav-list {
-  width: 40%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .nav-item {
-
+  font-weight: 500;
+  font-size: 18px;
 }
 .nav-item:not(:last-child) {
-  margin-right: 30px;
+  margin-right: 40px;
 }
 .nav-link {
   text-transform: capitalize;
+  position: relative;
+  transition: all .2s ease;
+  color : var(--text-color);
+} 
+.nav-link::before {
+  content : '';
+  position: absolute;
+  bottom: -12px;
+  left: 0;
+  right : 0;
+  height: 3px;
+  background-color : var(--primary-color);
+  width: 0;
+  transition: all .3s ease;
+}
+.nav-link:hover {
   color : var(--primary-color);
+  transition: all .25s ease;
+}
+.nav-link:hover::before{
+  transition: all .3s ease;
+  width: 100%;
+}
+
+.nav-link.active {
+  color : var(--primary-color);
+}
+.nav-link.active:hover::before{
+  width: 100%;
 }
 main {
   margin-top: 100px;
@@ -146,12 +174,14 @@ tbody tr {
 thead tr th {
   background: #ddd;
   padding: 5px;
+  min-width: 80px;
 }
 tbody tr td {
   padding: 5px;
   text-align: justify;
   text-overflow: ellipsis;
   overflow: hidden;
+  min-width: 80px;
 }
 tbody tr td{
   border: 1px solid #333;

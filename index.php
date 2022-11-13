@@ -19,9 +19,9 @@
     case '':
       include './view/home.php';
       break;
-    // case 'category':
-    // 	include './view/category.php';
-    // 	break;
+    case 'movie':
+    	include './view/movie.php';
+    	break;
     case 'login':
       header('Location: ./view/login.php');
       break;

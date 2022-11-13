@@ -33,28 +33,26 @@
       </div>
       <ul class="nav-list">
         <li class="nav-item">
-          <a href="./index.php" class="nav-link">Home</a>
+          <a href="./index.php" class="nav-link">Trang Chủ</a>
         </li>
         <li class="nav-item">
-          <a href="./index.php?page=category" class="nav-link">Category</a>
+          <a href="./index.php?page=category" class="nav-link">Thể loại</a>
         </li>
         <li class="nav-item">
-          <a href="./index.php?page=movie" class="nav-link">movie</a>
+          <a href="./index.php?page=movie" class="nav-link">Phim</a>
         </li>
         <li class="nav-item">
-          <a href="./index.php?page=theader" class="nav-link">theater</a>
+          <a href="./index.php?page=theader" class="nav-link">Rạp phim</a>
         </li>
         <li class="nav-item">
-          <a href="./index.php?page=bill" class="nav-link">bill</a>
+          <a href="./index.php?page=bill" class="nav-link">Đơn hàng</a>
         </li>
         <li class="nav-item">
-          <a href="./index.php?page=user" class="nav-link">user</a>
+          <a href="./index.php?page=user" class="nav-link">Khách hàng</a>
         </li>
       </ul>
-      <ul class="nav-list">
-        <li class="nav-item">
-          <a href="./view/pages/login.php" class="nav-link">Logout</a>
-        </li>
-      </ul>
+      <li class="nav-item">
+        <a href="./view/pages/login.php" class="nav-link">Đăng xuất</a>
+      </li>
     </nav>
   </header>

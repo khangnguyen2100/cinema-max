@@ -21,8 +21,8 @@
                 ';
               }
             ?>
-            <th style="width: 10%;">Update item</th>
-            <th style="width: 10%;">Delete item</th>
+            <th>Cập Nhật</th>
+            <th>Xóa</th>
           </tr>
         </thead>
         <tbody>
@@ -38,9 +38,15 @@
                   </td>
                 ';
               } else {
-                $string .= '
-                  <td>' . $value[$name] . '</td>
-                ';
+                if($name == 'description') {
+                  $string .= '
+                    <td>' . join(' ', array_slice(explode(' ', $value[$name]), 0 , 30)) . '...</td>
+                  ';
+                } else {
+                  $string .= '
+                    <td>' . $value[$name] .'</td>
+                  ';
+                }
               }
             }
             echo '

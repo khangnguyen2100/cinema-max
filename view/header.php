@@ -13,3 +13,29 @@
 </head>
 
 <body>
+<nav class="navbar navbar-inverse">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Cinema-Max</a>
+    </div>
+    <div class="navbar-right" style="display: flex; align-items: center;">
+
+      <ul class="nav navbar-nav">
+        <li class=""><a href="#">Mua vé</a></li>
+        <li><a href="#">Phim</a></li>
+        <li><a href="#">Góc Điện Ảnh</a></li>
+        <li><a href="#">Thành Viên</a></li>
+      </ul>
+      <form class="navbar-form" action="/action_page.php">
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="Search" name="search">
+          <div class="input-group-btn">
+            <button class="btn btn-default" type="submit">
+              <i class="glyphicon glyphicon-search"></i>
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</nav>
