@@ -2,17 +2,38 @@
   .barChart_wrapper {
     margin-top: 100px;
     display: block;
-    max-width: 80%;
     margin-left: auto;
     margin-right: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
   }
-  .pieProductChart_wrapper {
+  #barChart {
+    max-width: 80%;
+  }
+  .pieMovieChart_wrapper {
     margin-top: 100px;
-    max-width: 50%;
     margin-left: auto;
     margin-right: auto;
     display: block;
     margin-bottom: 100px;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  h3 {
+    text-align: left;
+    justify-self: flex-start;
+    display: block;
+    width: 100%;
+  }
+  #pieMovieChart {
+    max-width: 50%;
+    max-height: 900px;
   }
   .container h3 {
     font-size: 36px;
@@ -21,18 +42,28 @@
 </style>
 <script>
   const renderBarChart = (labels, dataTable) => {
-    const convertToNumber = dataTable.map(item => Number(item))
+    console.log(dataTable)
+    let convertToNumber = dataTable.map(item => Number(item))
+    //remove table seats, showtimes, start_times
+    convertToNumber.splice(3,3)
+    console.log(convertToNumber)
     const data = {
-      labels: labels,
+      labels: [
+        'Đơn Hàng',
+        'Thể Loại',
+        'Phim',
+        'Rạp Phim',
+        'Khách Hàng',
+      ],
       datasets: [{
-        label: ['Total'],
+        label: [],
         data: convertToNumber,
         backgroundColor: [
-          'rgba(255, 99, 132, 0.9)',
-          'rgba(255, 159, 64, 0.9)',
+          'rgba(48, 51, 107,1.0)',
+          'rgba(249, 202, 36,1.0)',
           'rgba(255, 205, 86, 0.9)',
-          'rgba(75, 192, 192, 0.9)',
-          'rgba(153, 102, 255, 0.9)',
+          'rgba(255, 121, 121,1.0)',
+          'rgba(83, 92, 104,1.0)',
         ],
         borderColor: [
           'rgb(255, 99, 132)',
@@ -62,51 +93,57 @@
       config
     );
   }
-  const collectProductData = []
+  const collectMovieData = []
   const handleCollectData = (arr) => {
-    collectProductData.push(arr)
+    collectMovieData.push(arr)
   }
-  const sortProductWithBrand = []
-  const renderProductChart = () => {
-    collectProductData.forEach((product, i) => {
-      const brandId = product[1];
+  const sortMovieWithMovie = []
+  const renderMovieChart = () => {
+    collectMovieData.forEach((movie, i) => {
+      const categoryId = movie[8];
       if (i === 0) {
-        sortProductWithBrand.push({
-          brandId: brandId,
+        sortMovieWithMovie.push({
+          categoryId: categoryId,
           amount: 1
         })
       } else {
         let check = true;
-        for (let index = 0; index < sortProductWithBrand.length; index++) {
-          if (sortProductWithBrand[index].brandId === brandId) {
-            sortProductWithBrand[index].amount++
+        for (let index = 0; index < sortMovieWithMovie.length; index++) {
+          if (sortMovieWithMovie[index].categoryId === categoryId) {
+            sortMovieWithMovie[index].amount++
             check = false
           }
         }
         if (check) {
-          sortProductWithBrand.push({
-            brandId: brandId,
+          sortMovieWithMovie.push({
+            categoryId: categoryId,
             amount: 1
           })
         }
       }
     })
-    const amountBrand = sortProductWithBrand.map(item => item.amount)
+    const amountMovie = sortMovieWithMovie.map(item => item.amount)
     const data = {
       labels: [
-        'Apple',
-        'Samsung',
-        'Xiaomi',
-        'Oppo'
+        'Hành Động',
+        'Kịch tính',
+        'Lãng mạn',
+        'Khoa học viễn tưởng',
+        'Hài',
+        'Kinh dị',
+        'Hoạt hình',
       ],
       datasets: [{
         label: 'My First Dataset',
-        data: amountBrand,
+        data: amountMovie,
         backgroundColor: [
-          'rgba(231, 231, 231, 1)',
-          'rgba(3, 76, 157, 1)',
-          'rgba(247, 100, 0, 1)',
-          'rgba(29, 158, 99, 1)'
+          '#00cec9',
+          '#74b9ff',
+          '#ffeaa7',
+          '#636e72',
+          '#d63031',
+          '#55efc4',
+          '#2d3436',
         ],
         hoverOffset: 4
       }]
@@ -115,27 +152,27 @@
       type: 'pie',
       data: data,
     };
-    const pieProductChart = new Chart(
-      document.getElementById('pieProductChart'),
+    const pieMovieChart = new Chart(
+      document.getElementById('pieMovieChart'),
       config
     );
   }
 </script>
 <div class="container">
   <div class='barChart_wrapper'>
-    <h3>All Table</h3>
+    <h3>Dữ liệu các bảng</h3>
     <canvas id="barChart"></canvas>
   </div>
-  <div class="pieProductChart_wrapper">
-    <h3>Product</h3>
-    <canvas id="pieProductChart"></canvas>
+  <div class="pieMovieChart_wrapper">
+    <h3>Phim theo thể loại</h3>
+    <canvas id="pieMovieChart"></canvas>
   </div>
   <div class="home-list">
     <?php
 
     $nameTables = [];
     $data = [];
-    $productTable = [];
+    $movieTable = [];
 
     $query = $db->prepare('show tables');
     $query->execute();
@@ -144,32 +181,30 @@
         $tableData = getAllTableData($tableName);
         array_push($nameTables, $tableName);
         array_push($data, count($tableData));
-        if ($tableName == 'product') {
-          $productTable = $tableData;
+        if ($tableName == 'movie') {
+          $movieTable = $tableData;
         }
       }
     }
 
-    function js_str($s)
-    {
+    function js_str($s) {
       return '"' . addcslashes($s, "\0..\37\"\\") . '"';
     }
-    function js_array($array)
-    {
+    function js_array($array) {
       $temp = array_map('js_str', $array);
       return '[' . implode(',', $temp) . ']';
     }
-    $jsArrayProduct = [];
-    foreach ($productTable as $key => $value) {
-      array_push($jsArrayProduct, js_array($value));
-      echo 
-        '<script>
+    $jsArrayMovie = [];
+    foreach ($movieTable as $key => $value) {
+      array_push($jsArrayMovie, js_array($value));
+      echo
+      '<script>
           handleCollectData(' . js_array($value) . ')
         </script>;';
     }
     echo '<script>
         renderBarChart(' . js_array($nameTables) . ',' . js_array($data) . ')
-        renderProductChart()
+        renderMovieChart()
       </script>;';
     ?>
 

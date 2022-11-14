@@ -44,6 +44,12 @@
         <li class="nav-item">
           <a href="./index.php?page=theader" class="nav-link">Rạp phim</a>
         </li>
+        <!-- <li class="nav-item">
+          <a href="./index.php?page=start_times" class="nav-link">Giờ chiếu</a>
+        </li>
+        <li class="nav-item">
+          <a href="./index.php?page=seats" class="nav-link">Ghế ngồi</a>
+        </li> -->
         <li class="nav-item">
           <a href="./index.php?page=bill" class="nav-link">Đơn hàng</a>
         </li>
