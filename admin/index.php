@@ -8,13 +8,14 @@ include '../module/utils.php';
 $page = '';
 $db = connectDb();
 
+
 if (isset($_GET['page'])) {
 	$page = $_GET['page'];
 	$tableData = getAllTableData($page);
 	$keys = getTableKeys();
 }
-// if ($_SESSION['adminLoginState'] == false) {
-// 	$page = 'login';
+// if (isset($_SESSION['admin']) === false) {
+	// $page = 'login';
 // }
 switch ($page) {
 	case '':
@@ -36,7 +37,7 @@ switch ($page) {
 	// 	include './view/pages/user.php';
 	// 	break;
 	case 'login':
-		header('Location: ./view/pages/login.php');
+		header('Location: login.php');
 		break;
 	default:
 		include './view/pages/page.php';

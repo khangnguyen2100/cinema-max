@@ -91,11 +91,9 @@
     include '.././module/deleteRow.php';
     deleteRow($_GET['page']);
   }
-  if (isset($_GET['mode']) && $_GET['mode'] == 'add') {
+  if (isset($_GET['mode']) && $_GET['mode'] == 'add') {         
     include './view/sections/addPopup.php';
     
-    include '.././module/uploadImage.php';
-    uploadImage();
   }
   if (isset($_GET['mode']) && $_GET['mode'] == 'update') {
     include '.././module/updateRow.php';

@@ -42,6 +42,9 @@
           <a href="./index.php?page=movie" class="nav-link">Phim</a>
         </li>
         <li class="nav-item">
+          <a href="./index.php?page=comment" class="nav-link">Bình luận</a>
+        </li>
+        <li class="nav-item">
           <a href="./index.php?page=theader" class="nav-link">Rạp phim</a>
         </li>
         <!-- <li class="nav-item">
@@ -58,7 +61,7 @@
         </li>
       </ul>
       <li class="nav-item">
-        <a href="./view/pages/login.php" class="nav-link">Đăng xuất</a>
+        <a href="../view/login.php" class="nav-link">Đăng xuất</a>
       </li>
     </nav>
   </header>

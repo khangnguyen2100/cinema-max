@@ -11,12 +11,14 @@
           $head .= $keyName.',';
           $body .= createId() .',';
         } else {
-          if($key == count($keys) - 1) {
-            $head .= $keyName;
-            $body .= "'$_POST[$keyName]'" ;
-          } else {
-            $head .= $keyName.',';
-            $body .= "'$_POST[$keyName]'" .',';
+          if($_POST[$keyName] !== '') {
+            if($key == count($keys) - 1) {
+              $head .= $keyName;
+              $body .= "'$_POST[$keyName]'" ;
+            } else {
+              $head .= $keyName.',';
+              $body .= "'$_POST[$keyName]'" .',';
+            }
           }
         }
       }

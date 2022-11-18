@@ -9,6 +9,10 @@
       foreach ($keys as $index => $key) {
 
         $inputType = '<input required class="add-item-input" type="text" name="' . $key . '">';
+        if ($key === 'date') {
+          $inputType = '';
+          $key = '';
+        }
         if ($key === 'birthday') {
           $inputType = '<input required class="add-item-input" type="date" name="' . $key . '">';
         }
@@ -40,7 +44,7 @@
           echo '
             <div class="add-item">
               <label class="add-item-label">' . $key . ': </label>
-              <input placeholder="Id sẽ tự động được tạo" class="add-item-input" type="text" name="' . $key . '">
+              <input placeholder="Id sẽ tự động được tạo" class="add-item-input" type="text" disabled name="' . $key . '">
             </div>
           ';
         }

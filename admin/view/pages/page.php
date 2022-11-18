@@ -5,9 +5,9 @@
         <div class="heading">
           Table <?php echo $_GET['page'] ?>
         </div>
-        <a <?php echo 'href="./index.php?page='.$_GET['page'].'&mode=add"' ?> class="header-icon add-btn">
+        <a <?php echo 'href="./index.php?page=' . $_GET['page'] . '&mode=add"' ?> class="header-icon add-btn">
           Add
-          <i class='bx bx-plus' ></i>
+          <i class='bx bx-plus'></i>
         </a>
       </div>
 
@@ -15,11 +15,11 @@
         <thead>
           <tr>
             <?php
-              foreach ($keys as $key => $value) {
-                echo '
-                  <th>'.$value.'</th>
+            foreach ($keys as $key => $value) {
+              echo '
+                  <th>' . $value . '</th>
                 ';
-              }
+            }
             ?>
             <th>Cập Nhật</th>
             <th>Xóa</th>
@@ -51,14 +51,14 @@
             }
             echo '
               <tr>
-              '.$string.'
+              ' . $string . '
                 <td class="td-btn">
-                  <a class="update-btn action-btn" href="./index.php?page='.$_GET['page'].'&mode=update&rowId=' . $id . '" class="btn" name="update">
+                  <a class="update-btn action-btn" href="./index.php?page=' . $_GET['page'] . '&mode=update&rowId=' . $id . '" class="btn" name="update">
                     Update
                   </a>
                 </td>
                 <td class="td-btn">
-                  <a class="delete-btn action-btn" href="./index.php?page='.$_GET['page'].'&mode=delete&rowId=' . $id . '" class="btn" name="delete">
+                  <a class="delete-btn action-btn" href="./index.php?page=' . $_GET['page'] . '&mode=delete&rowId=' . $id . '" class="btn" name="delete">
                     Delete
                   </a>
                 </td>
@@ -73,22 +73,22 @@
 </main>
 
 <?php
-  if (isset($_GET['mode']) && $_GET['mode'] == 'delete') {
-    include '.././module/deleteRow.php';
-    deleteRow($_GET['page']);
-  }
-  if (isset($_GET['mode']) && $_GET['mode'] == 'add') {
-    include './view/sections/addPopup.php';
-    
-    include '.././module/addRow.php';
-    addRow();
-  }
-  if (isset($_GET['mode']) && $_GET['mode'] == 'update') {
-    include '.././module/updateRow.php';
-    showPopupUpdate();
-  }
-  if (isset($_GET['mode']) && $_GET['mode'] == 'updated') {
-    include '.././module/updateRow.php';
-    updateRow();
-  }
+if (isset($_GET['mode']) && $_GET['mode'] == 'delete') {
+  include '.././module/deleteRow.php';
+  deleteRow($_GET['page']);
+}
+if (isset($_GET['mode']) && $_GET['mode'] == 'add') {
+  include './view/sections/addPopup.php';
+
+  include '.././module/addRow.php';
+  addRow();
+}
+if (isset($_GET['mode']) && $_GET['mode'] == 'update') {
+  include '.././module/updateRow.php';
+  showPopupUpdate();
+}
+if (isset($_GET['mode']) && $_GET['mode'] == 'updated') {
+  include '.././module/updateRow.php';
+  updateRow();
+}
 ?>

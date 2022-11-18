@@ -25,6 +25,7 @@
         <li><a href="#">Phim</a></li>
         <li><a href="#">Góc Điện Ảnh</a></li>
         <li><a href="#">Thành Viên</a></li>
+        <li><a href="./view/login.php">Đăng nhập</a></li>
       </ul>
       <form class="navbar-form" action="/action_page.php">
         <div class="input-group">
