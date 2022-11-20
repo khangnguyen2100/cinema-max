@@ -14,9 +14,9 @@ if (isset($_GET['page'])) {
 	$tableData = getAllTableData($page);
 	$keys = getTableKeys();
 }
-// if (isset($_SESSION['admin']) === false) {
-	// $page = 'login';
-// }
+if (!isset($_SESSION['admin'])) {
+	$page = 'login';
+}
 switch ($page) {
 	case '':
 		include './view/pages/home.php';
@@ -37,7 +37,7 @@ switch ($page) {
 	// 	include './view/pages/user.php';
 	// 	break;
 	case 'login':
-		header('Location: login.php');
+		header('Location: ../view/login.php');
 		break;
 	default:
 		include './view/pages/page.php';

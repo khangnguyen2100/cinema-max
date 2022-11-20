@@ -1,0 +1,117 @@
+.container{
+    width: 40%;
+    min-height: 720px;
+    border: 1px solid black;
+    position: relative;
+    left: 30%;
+    margin-top: 100px;
+    text-align: center;
+    padding-top: 30px;
+    background-color: bisque;
+}
+
+.alphabet{
+    width: 25px;
+    height: 22px;
+    border: 1px solid black;
+    position: relative;
+    left: 50px;
+    margin-top: 10px;
+    font-weight: bold;
+}
+.alphabet:hover{
+    background-color: burlywood;
+}
+.alphabet > p{
+    left: 6px;
+    position:absolute ;
+    top:-14px;
+    
+}
+.linenumber>button{
+    position: relative;
+    left:30px;
+    bottom: 20px;
+   
+}
+.linenumber>button:hover{
+    background-color:aquamarine;
+    
+}hr{
+    width: 50%;
+    height: 10px;
+    background-color: black;
+    
+}
+.note{
+    width: 15px;
+    height: 15px;
+    border: 1px solid black;
+    position: relative;
+    left: 50px;
+    top: 35px;
+    background-color: greenyellow;
+    float: left;
+}
+.note>p{
+    width: 150px;
+    float: left;
+    
+    position: relative;
+    bottom: 18px;
+    font-size: 13pt;
+}
+.note1{
+    width: 15px;
+    height: 15px;
+    border: 1px solid black;
+    position: relative;
+    left: 220px;
+    top: 35px;
+    background-color: red;
+    float: left;
+}
+.note1>p{
+    width: 150px;
+    float: left;
+    
+    position: relative;
+    bottom: 18px;
+    font-size: 13pt;
+}
+.note2{
+    width: 15px;
+    height: 15px;
+    border: 1px solid black;
+    position: relative;
+    left: 370px;
+    top: 35px;
+    background-color: rgb(214, 210, 210);
+    float: left;
+}
+.note2>p{
+    width: 150px;
+    float: left;
+    
+    position: relative;
+    bottom: 18px;
+    font-size: 13pt;
+}
+.note3{
+    width: 15px;
+    height: 15px;
+    border: 1px solid black;
+    position: relative;
+    left: 530px;
+    top: 35px;
+    background-color: rgb(214, 210, 210);
+    float: left;
+}
+.note3>p{
+    width: 150px;
+    float: left;
+    
+    position: relative;
+    bottom: 18px;
+    font-size: 13pt;
+}

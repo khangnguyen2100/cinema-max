@@ -249,3 +249,72 @@ footer a {
   color: #3c97bf;
   text-decoration: none;
 }
+.add-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.add-item {
+  width: calc(33.33% - 20px);
+  display: flex;
+  align-items: center;
+}
+
+.add-item-label {
+  font-weight: 500;
+  text-transform: capitalize;
+  font-size: 18px;
+  margin-right: 15px;
+  min-width: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: left !important;
+}
+
+.add-item-input {
+  width: 100%;
+  text-align: left !important;
+  padding: 5px;
+  outline: none;
+  border: 1px solid transparent;
+  transition: all .2s ease;
+  border-radius: 8px;
+}
+
+.radio-group {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  column-gap: 10px;
+}
+
+.radio-group input {
+  width: unset;
+  margin-left: 30px;
+}
+
+.add-item-input:focus {
+  outline: none;
+  border: 1px solid var(--primary-color);
+  transition: all .2s ease;
+}
+
+.add-item-input span {
+  text-align: left;
+}
+
+#register {
+  margin: 50px 0;
+}
+
+.sign-in-container::-webkit-scrollbar {
+  display: none;
+}
+button {
+  cursor: pointer;
+}

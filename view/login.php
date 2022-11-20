@@ -9,137 +9,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,900&family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="../styles/login.css">
-  <!-- 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
-
-    .container {
-      height: 100vh;
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .container-form {
-      width: 400px;
-      display: flex;
-      align-items: center;
-      row-gap: 25px;
-      flex-direction: column;
-      box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
-      padding: 25px;
-      border-radius: 15px;
-    }
-
-    .heading-form {
-      font-weight: 700;
-      font-size: 36px;
-      color: orangered;
-      text-transform: capitalize;
-    }
-
-    .form-group {
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
-    }
-
-    .form-group input {
-      font-size: 24px;
-      margin-top: 5px;
-      border: 0;
-      border-bottom: 1px solid orangered;
-      outline: none;
-    }
-
-    .btn-form {
-      width: 100%;
-      padding: 10px 15px;
-      border-radius: 5px;
-      border: 0;
-      background-color: #444;
-      color: #fff;
-      margin-top: 50px;
-    }
-  </style> -->
-  <style>
-    .add-wrapper {
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 30px;
-      margin-top: 30px;
-    }
-
-    .add-item {
-      width: calc(33.33% - 20px);
-      display: flex;
-      align-items: center;
-    }
-
-    .add-item-label {
-      font-weight: 500;
-      text-transform: capitalize;
-      font-size: 18px;
-      margin-right: 15px;
-      min-width: 100px;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      text-align: left !important;
-    }
-
-    .add-item-input {
-      width: 100%;
-      text-align: left !important;
-      padding: 5px;
-      outline: none;
-      border: 1px solid transparent;
-      transition: all .2s ease;
-      border-radius: 8px;
-    }
-
-    .radio-group {
-      display: flex;
-      align-items: center;
-      justify-content: start;
-      column-gap: 10px;
-    }
-
-    .radio-group input {
-      width: unset;
-      margin-left: 30px;
-    }
-
-    .add-item-input:focus {
-      outline: none;
-      border: 1px solid var(--primary-color);
-      transition: all .2s ease;
-    }
-
-    .add-item-input span {
-      text-align: left;
-    }
-
-    #register {
-      margin: 50px 0;
-    }
-
-    .sign-in-container::-webkit-scrollbar {
-      display: none;
-    }
-  </style>
 </head>
 
 <?php
@@ -147,10 +16,9 @@ include_once('../module/function.php');
 include '../module/connectDb.php';
 include '../module/utils.php';
 if (isset($_SESSION['admin'])) {
-  session_unset('admin');
+  unset($_SESSION['admin']);
 }
 $db = connectDb();
-session_destroy();
 if (isset($_SESSION['user']) || isset($_SESSION['admin'])) {
   header("Location:index.php");
 }
@@ -214,9 +82,7 @@ if (isset($_POST['register'])) {
   }
 }
 ?>
-
 <body>
-  <h2>SIGN IN</h2>
   <div class="container right-panel-active" id="container">
     <!-- Đăng Nhập -->
     <div class="form-container sign-up-container">
