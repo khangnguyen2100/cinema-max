@@ -1,51 +1,76 @@
-<div id="myCarousel" class="carousel slide" data-ride="carousel">
-  <!-- Indicators -->
-  <ol class="carousel-indicators">
-    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-    <li data-target="#myCarousel" data-slide-to="1"></li>
-    <li data-target="#myCarousel" data-slide-to="2"></li>
-    <li data-target="#myCarousel" data-slide-to="3"></li>
-  </ol>
+<style>
+  .swiper {
+  width: 100%;
+  height: 100%;
+}
 
-  <!-- Wrapper for slides -->
-  <div class="carousel-inner" role="listbox">
-    <div class="item active">
-      <img src="https://cdn.galaxycine.vn/media/2022/11/3/2048x682_1667485469196.jpg" alt="Image">
-      <div class="carousel-caption">
-      </div>
-    </div>
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
 
-    <div class="item">
-      <img src="https://cdn.galaxycine.vn/media/2022/11/1/1111111_1667275116008.jpg" alt="Image">
-      <div class="carousel-caption">
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
 
-      </div>
-    </div>
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
-    <div class="item">
-      <img src="https://cdn.galaxycine.vn/media/2022/11/4/111_1667572093456.jpg" alt="Image">
-      <div class="carousel-caption">
+.item {
+  height: 80vh;
+}
 
-      </div>
-    </div>
-
-    <div class="item">
-      <img src="https://cdn.galaxycine.vn/media/2022/10/26/ca2-poster-w2048xh682_1666771462253.jpg" alt="Image">
-      <div class="carousel-caption">
-
-      </div>
-    </div>
+</style>
+<div class="swiper mySwiper">
+  <div class="swiper-wrapper">
+    <?php
+    include './module/function.php';
+    $data = action("SELECT * FROM home_sliders INNER JOIN movie ON home_sliders.movie_id = movie.id");
+    foreach ($data as $key => $movie) {
+      extract($movie);
+      $subDesc = join(' ', array_slice(explode(" ", $description),0,40)) . ' ...';
+      $autoplay = '';
+      if($key == 0) {
+        $autoplay = "&autoplay=1";
+      }
+      echo '
+        <div class="swiper-slide item">
+          <div class="myVideo">
+            <iframe class="video-background"
+              frameborder="0" 
+              referrerpolicy="origin-when-cross-origin"
+              allowfullscreen="true"
+              src="https://www.youtube.com/embed/' . $trailer . '?hd=0&controls=0&mute=1&playsinline=1&loop=1&rel=0&modestbranding=0&autohide=1&showinfo=0&disablekb=1&enablejsapi=1&iv_load_policy=3&fs=0&playlist=' . $trailer . ''.$autoplay.'"
+              allow="autoplay"
+            >
+            </iframe>
+            <div class="movie-info">
+            <h1>'.$name.'</h1>
+            <p>'.$subDesc.'</p>
+            <button class="movie-info-action">Đặt vé ngay!</button>
+            </div>
+          </div>
+        </div>
+        ';
+    }
+    ?>
   </div>
-
-  <!-- Left and right controls -->
-  <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
+  <div class="swiper-pagination"></div>
 </div>
 
 <div class="container text-center">
@@ -59,93 +84,40 @@
     $tableData = getAllTableData('movie');
     foreach ($tableData as $key => $value) {
       extract($value);
+      $label_html = $label !== 'none' ? '<div class="movie-label">' . $label . '</div>' : '';
       echo '
-          <div class="col-md-4">
+          <div class="col-md-3">
           <div class="thumbnail">
             <a href="./index.php?page=movie&id=' . $id . '">
               <div class="thumbnail-img">
-                <img src="' . $thumbnail . '" alt="Lights">
+                <img src="' . $thumbnail . '" alt="alt" class="movie-img">
               </div>
               <div class="caption">
                 <p>' . $name . '</p>
               </div>
             </a>
+            ' . $label_html . '
           </div>
         </div>
           ';
     }
     ?>
-    <!-- <div class="col-md-4">
-        <div class="thumbnail">
-          <a href="#" target="_blank">
-            <div class="thumbnail-img">
-              <img src="https://cdn.galaxycine.vn/media/2022/11/1/450x300_1667287476548.jpg" alt="Lights" style="width:100%">
-            </div>
-            <div class="caption">
-              <p> CHIẾN BINH BÁO ĐEN: WAKANDA BẤT DIỆT</p>
-            </div>
-          </a>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="thumbnail">
-          <a href="#" target="_blank">
-            <div class="thumbnail-img">
-              <img src="https://cdn.galaxycine.vn/media/2022/11/1/1800x1200_1667275208614.jpg" alt="Nature" style="width:100%">
-            </div>
-            <div class="caption">
-              <p>LYLE, CHÚ CÁ SẤU BIẾT HÁT</p>
-            </div>
-          </a>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="thumbnail">
-          <a href="#" target="_blank">
-            <div class="thumbnail-img">
-              <img src="https://cdn.galaxycine.vn/media/2022/10/12/1350wx900h_1665592999797.jpg" alt="Fjords" style="width:100%">
-            </div>
-            <div class="caption">
-              <p>ĐẶC VỤ XUYÊN QUỐC GIA <br> </p>
-            </div>
-          </a>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="thumbnail">
-          <a href="#" target="_blank">
-            <div class="thumbnail-img">
-              <img src="https://cdn.galaxycine.vn/media/2022/9/26/1350wx900h_1664177568281.jpg" alt="Nature" style="width:100%">
-            </div>
-            <div class="caption">
-              <p>BLACK ADAM</p>
-            </div>
-          </a>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="thumbnail">
-          <a href="#" target="_blank">
-            <div class="thumbnail-img">
-              <img src="https://cdn.galaxycine.vn/media/2022/10/29/1800x1200_1667019043592.jpg" alt="Nature" style="width:100%">
-            </div>
-            <div class="caption">
-              <p>NGHI THỨC CẤM</p>
-            </div>
-          </a>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="thumbnail">
-          <a href="#" target="_blank">
-            <div class="thumbnail-img">
-              <img src="https://cdn.galaxycine.vn/media/2022/10/26/3-3_1666756281873.jpg" alt="Fjords" style="width:100%">
-            </div>
-            <div class="caption">
-              <p>VÌ NHỮNG NGƯỜI KHÔNG ĐƯỢC BẢO VỆ<br> </p>
-            </div>
-          </a>
-        </div>
-      </div> -->
   </div>
 </div>
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+<!-- Initialize Swiper -->
+<script>
+  var swiper = new Swiper(".mySwiper", {
+    pagination: {
+      el: ".swiper-pagination",
+      dynamicBullets: true,
+    },
+  });
+  const videos = [...document.querySelectorAll('.video-background')]
+  swiper.on('activeIndexChange', function(e) {
+    videos.map(item => item.src.replace('?autoplay=1', ''))
+    const index = e.activeIndex;
+    videos[index].src += "&autoplay=1";
+  });
+</script>

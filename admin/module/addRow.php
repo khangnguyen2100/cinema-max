@@ -12,12 +12,13 @@
           $body .= createId() .',';
         } else {
           if($_POST[$keyName] !== '') {
+            $value = trim($_POST[$keyName]);
             if($key == count($keys) - 1) {
               $head .= $keyName;
-              $body .= "'$_POST[$keyName]'" ;
+              $body .= "$value" ;
             } else {
               $head .= $keyName.',';
-              $body .= "'$_POST[$keyName]'" .',';
+              $body .= "$value" .',';
             }
           }
         }

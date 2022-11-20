@@ -19,10 +19,11 @@
       $body = '';
       foreach ($keys as $key => $value) {
         if($key !== 0) {
+          $key_value = trim($_POST[$value]);
           if($key == count($keys) - 1) {
-            $body .= "$value = ' $_POST[$value]'" ;
+            $body .= "$value = '$key_value'" ;
           } else {
-            $body .= "$value = ' $_POST[$value]'" .',';
+            $body .= "$value = '$key_value'" .',';
           }
         }
       }

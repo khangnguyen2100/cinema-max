@@ -1,6 +1,12 @@
 body {
-  background-image: linear-gradient(170deg, rgb(15, 22, 36), rgb(5, 7, 11));
+  background-image: linear-gradient(170deg, rgb(15, 22, 36), rgb(5, 7, 11)) !important;
   color: #fff !important;
+  font-family: "Poppins", sans-serif !important;
+  height: auto !important;
+}
+
+html {
+  height: auto !important;
 }
 
 a {
@@ -42,20 +48,25 @@ a {
   -o-transition: border 0.2s ease-in-out;
   transition: border 0.2s ease-in-out;
   overflow: hidden;
+  position: relative;
 }
 .thumbnail .thumbnail-img {
   border-radius: 5px !important;
   overflow: hidden;
 }
-
-.caption {
-  padding: 10px 0 !important;
-  color: white !important;
-  font-weight: 600;
+.thumbnail:hover .caption {
+  color: rgb(50, 138, 241) !important;
   transition: all 0.2s ease;
 }
-.caption:hover {
-  color: rgb(50, 138, 241) !important;
+
+.caption {
+  padding-top: 10px !important;
+  color: white !important;
+  font-weight: 600;
+  font-size: 15px;
+  text-transform: capitalize;
+  text-align: center;
+  text-transform: uppercase;
   transition: all 0.2s ease;
 }
 
@@ -71,4 +82,93 @@ a {
   font-size: 24px;
   font-weight: 700;
   text-transform: capitalize;
+}
+
+.movie-img {
+  width: 274px;
+  height: 402px;
+}
+
+.movie-label {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #F56857;
+  background: rgba(50, 138, 241, 0.2);
+  border-radius: 5px;
+}
+
+.video-container {
+  width: 100vw;
+  height: 100vh;
+}
+
+iframe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 118vh;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+@media (min-aspect-ratio: 16/9) {
+  .video-container iframe {
+    height: 76.25vw;
+  }
+}
+@media (max-aspect-ratio: 16/9) {
+  .video-container iframe {
+    width: 177.78vh;
+  }
+}
+.myVideo {
+  position: fixed;
+  z-index: 99;
+  width: 100%;
+  height: 100%;
+}
+
+.movie-info {
+  position: absolute;
+  top: 55%;
+  transform: translateY(-50%);
+  left: 100px;
+  text-align: left;
+  display: flex;
+  justify-content: start;
+  flex-direction: column;
+  max-width: 500px;
+}
+.movie-info h1 {
+  font-size: 70px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.movie-info p {
+  font-weight: 500;
+  color: #bbb;
+}
+.movie-info .movie-info-action {
+  width: 40%;
+  color: #F56857;
+  border: 1px solid #F56857;
+  margin-top: 25px;
+  backdrop-filter: blur(20px);
+  border-radius: 10px;
+  padding: 10px 0;
+  background-color: transparent;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+.movie-info .movie-info-action:hover {
+  background-color: #F56857;
+  color: #fff;
+  transition: all 0.3s ease;
 }
