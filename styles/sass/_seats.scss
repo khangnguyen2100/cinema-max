@@ -1,0 +1,187 @@
+.seat-container{
+  width: 40%;
+  min-height: 720px;
+  border: 2px solid black;
+  position: relative;
+  left: 30%;
+  margin-top: 100px;
+  text-align: center;
+  padding-top: 30px;
+  background-color:#C4DFE6;
+  display: flexbox;
+  flex-wrap: wrap;
+}
+
+.seat-container .alphabet{
+  width: 25px;
+  height: 22px;
+  border: 1px solid #FB6542;
+  position: relative;
+  left: 50px;
+  margin-top: 10px;
+  font-weight: bold;
+  color: white;
+  background-color: #FB6542;
+}
+
+.seat-container .alphabet > p{
+  left: 6px;
+  position:absolute ;
+  top:-14px;
+  
+}
+.seat-container .linenumber>button{
+  position: relative;
+  left:30px;
+  bottom: 20px;
+  border:1px solid #FB6542;
+ 
+}
+.seat-container .linenumber>button:hover{
+  background-color:greenyellow;
+  
+}
+.seat-container hr{
+  width: 50%;
+  height: 10px;
+  background-color: black;
+}
+.seat-container .note{
+  width: 15px;
+  height: 15px;
+  border: 1px solid black;
+  position: relative;
+  left: 50px;
+  top: 35px;
+  background-color: greenyellow;
+  float: left;
+}
+.seat-container .note>p{
+  width: 150px;
+  float: left;
+  
+  position: relative;
+  bottom: 18px;
+  font-size: 13pt;
+}
+.seat-container .note1{
+  width: 15px;
+  height: 15px;
+  border: 1px solid black;
+  position: relative;
+  left: 220px;
+  top: 35px;
+  background-color: red;
+  float: left;
+}
+.seat-container .note1>p{
+  width: 150px;
+  float: left;
+  
+  position: relative;
+  bottom: 18px;
+  font-size: 13pt;
+}
+.seat-container .note2{
+  width: 15px;
+  height: 15px;
+  border: 1px solid black;
+  position: relative;
+  left: 370px;
+  top: 35px;
+  background-color: rgb(214, 210, 210);
+  float: left;
+}
+.seat-container .note2>p{
+  width: 150px;
+  float: left;
+  
+  position: relative;
+  bottom: 18px;
+  font-size: 13pt;
+}
+.seat-container .note3{
+  width: 15px;
+  height: 15px;
+  border: 1px solid black;
+  position: relative;
+  left: 530px;
+  top: 35px;
+  background-color: blue;
+  float: left;
+}
+.seat-container .note3>p{
+  width: 150px;
+  float: left;
+  
+  position: relative;
+  bottom: 18px;
+  font-size: 13pt;
+}
+
+@media (min-width:320px) and (max-width:1024px){
+  .seat-container{
+    width: 230px;
+    padding-right: 10%;
+  }
+  .alphabet{
+    width: 10%;
+    margin-left: 30%;
+    margin-bottom: 15%;
+      
+  }
+  .seat-container p{
+    margin-left: -3px;
+  }
+  .seat-container .manhinh{
+     margin-left: 65px;
+  }
+  .seat-container hr{
+      margin-left: 85px;
+  }
+  .seat-container .note{
+      margin-left: -30px;
+      
+  }
+  .seat-container .note>p{
+      padding-left: 12px;
+  }
+  .seat-container .note1{
+      margin-left: -200px;
+      margin-top:30px ;
+  }
+  
+  .seat-container .note2{
+      margin-left: -350px;
+      margin-top:60px ;
+  }
+  .seat-container .note2>p{
+      padding-left: 4px;
+  }
+  .seat-container .note3{
+      margin-left: -510px;
+      margin-top:90px ;
+  }
+  .seat-container .note3>p{
+      padding-left: 20px;
+  }
+}
+.seat-container h2{
+  margin-left: 50px;
+}
+@media (min-width:1024px) and (max-width:1800px) {
+  .seat-container  .alphabet{
+    position: relative;
+    margin-left: -43px;
+    
+  }
+  .seat-container{
+          width: 720px;
+  }
+  
+}
+
+
+
+
+
