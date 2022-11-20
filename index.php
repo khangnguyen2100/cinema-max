@@ -10,10 +10,6 @@
     $page = $_GET['page'];
     $keys = getTableKeys();
   }
-  // if ($_SESSION['adminLoginState'] == false) {
-    // 	$page = 'login';
-    // }
-    
   include './view/header.php';
   switch ($page) {
     case '':
@@ -21,6 +17,9 @@
       break;
     case 'movie':
     	include './view/movie.php';
+    	break;
+    case 'seats':
+    	include './view/seats.php';
     	break;
     case 'login':
       header('Location: ./view/login.php');
