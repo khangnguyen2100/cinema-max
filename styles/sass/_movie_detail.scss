@@ -1,0 +1,105 @@
+.movie-container {
+  margin-top: 50px;
+}
+
+.thanh1 {
+  padding: 20px;
+}
+
+.form-button {
+  background-color: rgb(244, 203, 98);
+  border: 0ch;
+}
+
+.thanh1 {
+  float: right;
+  padding-top: 0px;
+}
+
+.thanh1 h1 {
+  border-style: double;
+  width: 350px;
+  height: 200px;
+}
+
+.thanh1 h1 p input {
+  border: 0ch;
+  width: 300px;
+  height: 50px;
+  background-color: rgb(196, 193, 190);
+}
+
+.thanh1 h1 input {
+  border: 0ch;
+  width: 300px;
+  height: 50px;
+  background-color: rgb(255, 119, 0);
+}
+
+.thanh2 {
+  padding-right: 260px;
+  float: right;
+  padding-top: 4%;
+}
+.thanh3 {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+  flex-direction: column;
+  
+}
+.form-group {
+  color : #222;
+  select, input {
+    width: 300px;
+    height: 40px;
+    border-color: none;
+  }
+}
+
+.thanh5 {
+  float: right;
+  height: 30px;
+}
+
+.thanh5 input {
+  height: 37px;
+}
+
+.thanh4 input {
+  height: 35px;
+}
+
+.form-group input {
+  margin-left: 15px;
+}
+
+.thanh5 {
+  margin-left: 2000px;
+  padding-right: 150px;
+}
+
+.form-buton {
+  background-color: rgb(255, 119, 0);
+  border: 0ch;
+  width: 200px;
+  height: 50px;
+  font-weight: 200;
+  text-align: left;
+}
+
+.thanh6 p {
+  border: groove;
+  margin-top: -1px;
+  width: 750px;
+  height: 100px;
+  text-align: left;
+  padding: 20px;
+}
+
+.thanh6 input {
+  text-align: 50px;
+  width: 70px;
+  height: 30px;
+  background-color: 0px;
+}
