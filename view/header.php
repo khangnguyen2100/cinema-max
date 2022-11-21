@@ -18,7 +18,7 @@
   <nav class="navbar navbar-inverse">
     <div class="container">
       <div class="navbar-header">
-        <a class="navbar-brand" href="#">Cinema-Max</a>
+        <a class="navbar-brand" href="./index.php">Cinema-Max</a>
       </div>
       <div class="navbar-right" style="display: flex; align-items: center;">
 
