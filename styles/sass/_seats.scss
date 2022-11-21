@@ -1,18 +1,31 @@
+.seat-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1170px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+
+}
 .seat-container{
-  width: 40%;
+  width: 60%;
   min-height: 720px;
   border: 2px solid black;
-  margin-top: 50px;
   text-align: center;
   padding-top: 30px;
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%);
   background-color:#C4DFE6;
-  display: flexbox;
-  flex-wrap: wrap;
 }
-
+.movie-info-container {
+  width: 30%;
+}
+.movie-info-img {
+  max-width: 100%;
+  img {
+    max-width: 100%;
+    object-fit: cover;
+  };
+}
 .seat-container .alphabet{
   width: 25px;
   height: 25px;
@@ -38,13 +51,7 @@
   column-gap: 5px;
 }
 
-.seat-container .linenumber>button{
-  border:1px solid #FB6542;
-}
-.seat-container .linenumber>button:hover{
-  background-color:greenyellow;
-  
-}
+
 .seat-container hr{
   width: 50%;
   height: 10px;
@@ -73,6 +80,22 @@
   }
   
 }
+.seat-container .linenumber>button{
+  border:1px solid #FB6542;
+}
+.seat-container .linenumber>button:hover{
+  background-color:rgb(198, 183, 183);
+  
+}
+.input-text {
+  background-color: transparent;
+  border: 0;
+  padding: 0;
+  &:focus {
+    outline: none;
+  }
+  outline: none;
+}
 button {
   background: rgb(248, 241, 241);
 }
@@ -99,6 +122,14 @@ button.has_sold {
   color : #333;
   cursor: pointer;
   font-weight: 500;
+}
+.book_btn {
+  background-color : $primary_color;
+  margin-left: auto;
+  width: 50%;
+  display: block !important;
+  margin-top: 25px;
+  margin-right: auto;
 }
 
 @media (min-width:320px) and (max-width:1024px){

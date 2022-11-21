@@ -87,19 +87,43 @@
   font-weight: 200;
   text-align: left;
 }
-
-.thanh6 p {
-  border: groove;
-  margin-top: -1px;
-  width: 750px;
-  height: 100px;
-  text-align: left;
-  padding: 20px;
-}
-
-.thanh6 input {
-  text-align: 50px;
-  width: 70px;
-  height: 30px;
-  background-color: 0px;
+.times-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 30px;
+  .theader-name {
+    font-size: 18px;
+    color : #fff;
+    background-color: $secondary_color;
+    padding: 7px 20px;
+  }
+  .times {
+    width: 100%;
+    background-color: #151F32;
+    border: 1px solid #ced0da;
+    padding: 35px 20px 25px;
+    display: flex;
+    align-items: center;
+    column-gap: 30px;
+    border-radius:  0 10px 10px 10px;
+    .times-content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      column-gap: 15px;
+      a {
+        border: 1px solid #ced0da;
+        padding: 5px 10px;
+        transition: all .2s ease;
+        cursor: pointer;
+        color: #fff;
+        &:hover {
+          border: 1px solid $secondary_color;
+          color : $secondary_color;
+          transition: all .2s ease;
+        }
+      }
+    }
+  }
 }

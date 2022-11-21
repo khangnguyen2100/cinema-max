@@ -5,11 +5,14 @@
   include './module/utils.php';
   $page = '';
   $db = connectDb();
-
+  
+  include './module/function.php';
+  
   if (isset($_GET['page'])) {
     $page = $_GET['page'];
     $keys = getTableKeys();
   }
+  
   include './view/header.php';
   switch ($page) {
     case '':

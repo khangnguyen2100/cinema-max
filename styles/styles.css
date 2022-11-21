@@ -173,19 +173,35 @@ iframe {
   transition: all 0.3s ease;
 }
 
+.seat-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1170px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+}
+
 .seat-container {
-  width: 40%;
+  width: 60%;
   min-height: 720px;
   border: 2px solid black;
-  margin-top: 50px;
   text-align: center;
   padding-top: 30px;
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%);
   background-color: #C4DFE6;
-  display: flexbox;
-  flex-wrap: wrap;
+}
+
+.movie-info-container {
+  width: 30%;
+}
+
+.movie-info-img {
+  max-width: 100%;
+}
+.movie-info-img img {
+  max-width: 100%;
+  object-fit: cover;
 }
 
 .seat-container .alphabet {
@@ -213,14 +229,6 @@ iframe {
   justify-content: center;
   align-items: center;
   column-gap: 5px;
-}
-
-.seat-container .linenumber > button {
-  border: 1px solid #FB6542;
-}
-
-.seat-container .linenumber > button:hover {
-  background-color: greenyellow;
 }
 
 .seat-container hr {
@@ -251,6 +259,20 @@ iframe {
   width: 15px;
   height: 15px;
   border: 1px solid black;
+}
+
+.seat-container .linenumber > button {
+  border: 1px solid #FB6542;
+}
+
+.seat-container .linenumber > button:hover {
+  background-color: rgb(198, 183, 183);
+}
+
+.input-text {
+  background-color: transparent;
+  border: 0;
+  padding: 0;
 }
 
 button {
@@ -285,6 +307,15 @@ button.has_sold {
   color: #333;
   cursor: pointer;
   font-weight: 500;
+}
+
+.book_btn {
+  background-color: rgb(50, 138, 241);
+  margin-left: auto;
+  width: 50%;
+  display: block !important;
+  margin-top: 25px;
+  margin-right: auto;
 }
 
 @media (min-width: 320px) and (max-width: 1024px) {
@@ -426,18 +457,43 @@ button.has_sold {
   text-align: left;
 }
 
-.thanh6 p {
-  border: groove;
-  margin-top: -1px;
-  width: 750px;
-  height: 100px;
-  text-align: left;
-  padding: 20px;
+.times-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 30px;
 }
-
-.thanh6 input {
-  text-align: 50px;
-  width: 70px;
-  height: 30px;
-  background-color: 0px;
+.times-container .theader-name {
+  font-size: 18px;
+  color: #fff;
+  background-color: #F56857;
+  padding: 7px 20px;
+}
+.times-container .times {
+  width: 100%;
+  background-color: #151F32;
+  border: 1px solid #ced0da;
+  padding: 35px 20px 25px;
+  display: flex;
+  align-items: center;
+  column-gap: 30px;
+  border-radius: 0 10px 10px 10px;
+}
+.times-container .times .times-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 15px;
+}
+.times-container .times .times-content a {
+  border: 1px solid #ced0da;
+  padding: 5px 10px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  color: #fff;
+}
+.times-container .times .times-content a:hover {
+  border: 1px solid #F56857;
+  color: #F56857;
+  transition: all 0.2s ease;
 }
