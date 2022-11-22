@@ -41,12 +41,7 @@
           </div>
         ';
         } else {
-          echo '
-            <div class="add-item">
-              <label class="add-item-label">' . $key . ': </label>
-              <input placeholder="Id sẽ tự động được tạo" class="add-item-input" type="text" disabled name="' . $key . '">
-            </div>
-          ';
+          
         }
       }
       ?>

@@ -1,6 +1,3 @@
-<?php
-    include './module/function.php';
-?>
 <div class="seat-wrapper">
     <div class="seat-container">
         <h2>CHỌN GHẾ</h2>

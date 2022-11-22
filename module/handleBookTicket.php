@@ -1,7 +1,6 @@
 <?php
   if (isset($_POST["ticket"])) {
     include './connectDb.php';
-    include './utils.php';
     include './function.php';
     $id = createId();
     $db = connectDb();

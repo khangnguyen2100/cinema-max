@@ -1,6 +1,5 @@
 <div class="movie-container container">
     <?php
-    include './module/function.php';
     $id = $_GET['id'];
     $data = action("SELECT * FROM movie WHERE id = $id");
     $ca_id = $data[0]['catefory_id'];

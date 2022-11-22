@@ -14,7 +14,6 @@
 <?php
 include_once('../module/function.php');
 include '../module/connectDb.php';
-include '../module/utils.php';
 if (isset($_SESSION['admin'])) {
   unset($_SESSION['admin']);
 }

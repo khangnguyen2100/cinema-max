@@ -39,7 +39,6 @@
 <div class="swiper mySwiper">
   <div class="swiper-wrapper">
     <?php
-    include './module/function.php';
     $data = action("SELECT * FROM home_sliders INNER JOIN movie ON home_sliders.movie_id = movie.id");
     foreach ($data as $key => $movie) {
       extract($movie);

@@ -1,8 +1,8 @@
 <?php
-  include './module/connectDb.php';
+  include_once './module/connectDb.php';
   include './module/getAllTableData.php';
   include './module/getTableKeys.php';
-  include './module/utils.php';
+  include_once './module/function.php';
   $page = '';
   $db = connectDb();
   
