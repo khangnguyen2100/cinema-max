@@ -9,18 +9,7 @@
   <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
   <link rel="stylesheet" href="./assets/style.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js" integrity="sha512-ElRFoEQdI5Ht6kZvyzXhYG9NqjtkmlkfYk0wr6wHxU9JEHakS7UJZNeml5ALk+8IKlU6jDgMabC3vkumRokgJA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            clifford: '#da373d',
-          }
-        }
-      }
-    }
-  </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -47,12 +36,6 @@
         <li class="nav-item">
           <a href="./index.php?page=theader" class="nav-link">Rạp phim</a>
         </li>
-        <!-- <li class="nav-item">
-          <a href="./index.php?page=start_times" class="nav-link">Giờ chiếu</a>
-        </li>
-        <li class="nav-item">
-          <a href="./index.php?page=seats" class="nav-link">Ghế ngồi</a>
-        </li> -->
         <li class="nav-item">
           <a href="./index.php?page=bill" class="nav-link">Đơn hàng</a>
         </li>

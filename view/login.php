@@ -17,6 +17,9 @@ include '../module/connectDb.php';
 if (isset($_SESSION['admin'])) {
   unset($_SESSION['admin']);
 }
+if (isset($_SESSION['user'])) {
+  unset($_SESSION['user']);
+}
 $db = connectDb();
 if (isset($_SESSION['user']) || isset($_SESSION['admin'])) {
   header("Location:index.php");
@@ -40,9 +43,13 @@ if (isset($_POST['login'])) {
   ));
 
   if ($cout_admin->rowCount() > 0) {
+    $user_id = action("SELECT id FROM user WHERE email = '".$email."'");
     $_SESSION['admin'] = $email;
+    $_SESSION['user_id'] = $user_id[0]['id'];
     header("Location:../admin/index.php");
   } elseif ($count->rowCount() > 0) {
+    $user_id = action("SELECT id FROM user WHERE email = '".$email."'");
+    $_SESSION['user_id'] = $user_id[0]['id'];
     $_SESSION['user'] = $email;
     header("location:../index.php");
   } else {

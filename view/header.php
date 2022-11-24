@@ -27,18 +27,23 @@
           <li><a href="#">Phim</a></li>
           <li><a href="#">Góc Điện Ảnh</a></li>
           <li><a href="#">Thành Viên</a></li>
-          <li><a href="./view/login.php">Đăng nhập</a></li>
+          <?php
+            if(isset($_SESSION['admin']) || isset($_SESSION['user'])) {
+              $email = getEmail();
+              $firstLetter = substr($email,0,1);
+              echo '
+                <li><a href="./view/login.php" class="avatar">
+                '.$firstLetter.'
+                  <span class="tooltiptext">'.$email.'</span>
+                </a></li>
+              ';    
+            } else {
+              echo '
+                <li><a href="./view/login.php">Đăng nhập</a></li>
+              ';
+            }
+          ?>
         </ul>
-        <form class="navbar-form" action="/action_page.php">
-          <div class="input-group">
-            <input type="text" class="form-control" placeholder="Search" name="search">
-            <div class="input-group-btn">
-              <button class="btn btn-default" type="submit">
-                <i class="glyphicon glyphicon-search"></i>
-              </button>
-            </div>
-          </div>
-        </form>
       </div>
     </div>
   </nav>

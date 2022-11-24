@@ -2,5 +2,5 @@
     BK store - admin dashboard
   </footer>
 </body>
-<script src="./assets/index.js"></script>
+<!-- <script src="./assets/index.js"></script> -->
 </html>

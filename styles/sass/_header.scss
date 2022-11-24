@@ -6,13 +6,14 @@
   margin-bottom: 0 !important;
   background: rgba(21, 31, 50, 1) !important;
   padding: 10px 0 !important;
+  border-radius: 0 !important;
 }
 .navbar-brand {
   color : $primary_color !important;
 }
 .navbar-nav {
   a {
-    font-size: 16px !important;
+    font-size: 16px;
   }
   a:hover {
     color: $primary_color !important;
@@ -43,7 +44,7 @@
 }
 .caption {
   padding-top: 10px !important;
-  color: white !important;
+  color: #333 !important;
   font-weight: 600;
   font-size: 15px;
   text-transform: capitalize;
@@ -130,6 +131,7 @@ iframe {
   h1 {
     font-size: 70px;
     font-weight: 600;
+    color : #fff;
     text-transform: uppercase;
   }
   p {
@@ -153,4 +155,48 @@ iframe {
       transition: all .3s ease;
     }
   }
+}
+.nav.navbar-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  background-color : $bg_button_color;
+  font-weight: 900;
+  font-size: 22px !important;
+  cursor: pointer;
+  color: $primary_color !important;
+  padding: 0 !important;
+  position: relative;
+  border-bottom: 1px dotted black;
+  &:hover {
+    background-color : $bg_button_hover_color !important;
+  }
+}
+
+.avatar .tooltiptext {
+  visibility: hidden;
+  font-size: 12px;
+  text-transform: lowercase;
+  color : #ccc;
+  font-weight: 300;
+  transition: all .2s ease;
+  text-align: center;
+  position: absolute;
+  bottom: -18px;
+  left: -30px;
+  z-index: 1;
+}
+
+.avatar:hover .tooltiptext {
+  visibility: visible;
+  transition: all .2s ease;
 }

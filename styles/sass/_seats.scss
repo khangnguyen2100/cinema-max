@@ -11,7 +11,6 @@
 .seat-container{
   width: 60%;
   min-height: 720px;
-  border: 2px solid black;
   text-align: center;
   padding-top: 30px;
   background-color:#C4DFE6;
@@ -52,11 +51,6 @@
 }
 
 
-.seat-container hr{
-  width: 50%;
-  height: 10px;
-  background-color: black;
-}
 .notes {
   display: flex;
   justify-content: center;
@@ -125,6 +119,7 @@ button.has_sold {
 }
 .book_btn {
   background-color : $primary_color;
+  color : #fff !important;
   margin-left: auto;
   width: 50%;
   display: block !important;

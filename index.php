@@ -8,7 +8,6 @@
   
   if (isset($_GET['page'])) {
     $page = $_GET['page'];
-    $keys = getTableKeys();
   }
   
   include './view/header.php';
@@ -21,6 +20,9 @@
     	break;
     case 'seats':
     	include './view/seats.php';
+    	break;
+    case 'rap':
+    	include './view/rap.php';
     	break;
     case 'login':
       header('Location: ./view/login.php');

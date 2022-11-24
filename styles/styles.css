@@ -1,6 +1,6 @@
 body {
-  background-image: linear-gradient(170deg, rgb(15, 22, 36), rgb(5, 7, 11)) !important;
-  color: #fff !important;
+  background-color: #fff !important;
+  color: #333 !important;
   font-family: "Poppins", sans-serif !important;
   height: auto !important;
 }
@@ -22,6 +22,7 @@ a {
   margin-bottom: 0 !important;
   background: rgb(21, 31, 50) !important;
   padding: 10px 0 !important;
+  border-radius: 0 !important;
 }
 
 .navbar-brand {
@@ -29,7 +30,7 @@ a {
 }
 
 .navbar-nav a {
-  font-size: 16px !important;
+  font-size: 16px;
 }
 .navbar-nav a:hover {
   color: rgb(50, 138, 241) !important;
@@ -61,7 +62,7 @@ a {
 
 .caption {
   padding-top: 10px !important;
-  color: white !important;
+  color: #333 !important;
   font-weight: 600;
   font-size: 15px;
   text-transform: capitalize;
@@ -149,6 +150,7 @@ iframe {
 .movie-info h1 {
   font-size: 70px;
   font-weight: 600;
+  color: #fff;
   text-transform: uppercase;
 }
 .movie-info p {
@@ -173,6 +175,52 @@ iframe {
   transition: all 0.3s ease;
 }
 
+.nav.navbar-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  background-color: rgba(50, 138, 241, 0.2);
+  font-weight: 900;
+  font-size: 22px !important;
+  cursor: pointer;
+  color: rgb(50, 138, 241) !important;
+  padding: 0 !important;
+  position: relative;
+  border-bottom: 1px dotted black;
+}
+.avatar:hover {
+  background-color: rgba(50, 138, 241, 0.25) !important;
+}
+
+.avatar .tooltiptext {
+  visibility: hidden;
+  font-size: 12px;
+  text-transform: lowercase;
+  color: #ccc;
+  font-weight: 300;
+  transition: all 0.2s ease;
+  text-align: center;
+  position: absolute;
+  bottom: -18px;
+  left: -30px;
+  z-index: 1;
+}
+
+.avatar:hover .tooltiptext {
+  visibility: visible;
+  transition: all 0.2s ease;
+}
+
 .seat-wrapper {
   display: flex;
   justify-content: space-between;
@@ -186,7 +234,6 @@ iframe {
 .seat-container {
   width: 60%;
   min-height: 720px;
-  border: 2px solid black;
   text-align: center;
   padding-top: 30px;
   background-color: #C4DFE6;
@@ -231,12 +278,6 @@ iframe {
   column-gap: 5px;
 }
 
-.seat-container hr {
-  width: 50%;
-  height: 10px;
-  background-color: black;
-}
-
 .notes {
   display: flex;
   justify-content: center;
@@ -273,6 +314,10 @@ iframe {
   background-color: transparent;
   border: 0;
   padding: 0;
+  outline: none;
+}
+.input-text:focus {
+  outline: none;
 }
 
 button {
@@ -311,6 +356,7 @@ button.has_sold {
 
 .book_btn {
   background-color: rgb(50, 138, 241);
+  color: #fff !important;
   margin-left: auto;
   width: 50%;
   display: block !important;
@@ -471,7 +517,7 @@ button.has_sold {
 }
 .times-container .times {
   width: 100%;
-  background-color: #151F32;
+  background-color: #efefef;
   border: 1px solid #ced0da;
   padding: 35px 20px 25px;
   display: flex;
@@ -490,7 +536,7 @@ button.has_sold {
   padding: 5px 10px;
   transition: all 0.2s ease;
   cursor: pointer;
-  color: #fff;
+  color: #333;
 }
 .times-container .times .times-content a:hover {
   border: 1px solid #F56857;

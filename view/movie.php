@@ -25,7 +25,7 @@
                 <img src="https://cdn.pixabay.com/photo/2017/06/26/00/46/flat-2442462_960_720.png" alt="" width="20px" height="20px">
                 <br>
                 <br>
-                <p style="color:#fff">
+                <p style="color:#333">
                     <br><br>&ensp; &ensp; Thể loại:
                     <b>' . $category[0]['name'] . '</b>
 
@@ -63,8 +63,8 @@
         </div>
     </div>
     <?php
-    $id = $_GET['id'];
-    $showtimes = action("SELECT * FROM showtimes WHERE movie_id = $id");
+    $movie_id = $_GET['id'];
+    $showtimes = action("SELECT * FROM showtimes WHERE movie_id = $movie_id");
     foreach ($showtimes as $key => $value) {
         extract($value);
         $theader = action("SELECT name FROM theader WHERE id = $theater_id");
@@ -74,7 +74,7 @@
 
         foreach ($start_times as $key => $value) {
             extract($value);
-            $times_html .= '<a href="index.php?page=seats&movie_id=1&start_time_id='.$id.'&theater_id='.$theater_id.'">'.$time.'</a>'; 
+            $times_html .= '<a href="index.php?page=seats&movie_id='.$movie_id.'&start_time_id='.$id.'&theater_id='.$theater_id.'">'.$time.'</a>'; 
         }
         echo '
             <div class="times-container">
@@ -90,4 +90,7 @@
         </div>
         ';
     }
+
+
+    include 'comment.php';
     ?>

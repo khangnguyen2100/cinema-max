@@ -1,3 +1,16 @@
+<?php
+if (isset($_SESSION['admin']) && $_SESSION['admin'] !== '' || isset($_SESSION['user']) && $_SESSION['user'] !== '') {
+} else {
+    echo "
+        <script type='text/javascript'>
+            setTimeout(() => {
+            alert('Bạn chưa đăng nhập vui lòng đăng nhập')
+            window.location.assign('./view/login.php')
+            }, 100);
+        </script>
+        ";
+}
+?>
 <div class="seat-wrapper">
     <div class="seat-container">
         <h2>CHỌN GHẾ</h2>
@@ -45,7 +58,7 @@
             </div>
         </div>
     </div>
-    <form method="post" id="ticket"<?php echo "action=./module/handleBookTicket.php?movie_id=".$_GET['movie_id']."&start_time_id=".$_GET['start_time_id']."&theater_id=".$_GET['theater_id'].""?> class="movie-info-container">
+    <form method="post" id="ticket" <?php echo "action=./module/handleBookTicket.php?movie_id=" . $_GET['movie_id'] . "&start_time_id=" . $_GET['start_time_id'] . "&theater_id=" . $_GET['theater_id'] . "" ?> class="movie-info-container">
         <?php
         $movie_id = $_GET['movie_id'];
         $start_time_id = $_GET['start_time_id'];
@@ -69,7 +82,7 @@
                 <p class="seat_selected">
                     Ghế ngồi: <input type="text" id="selected"  class="input-text" name="selected" readonly />
                 </p>
-                <input type="text" name="ticket_price" class="total-price input-text" value="0" />
+                <input type="text" name="ticket_price" class="total-price input-text" value="0" readonly />
                 <input type="submit" name="ticket" class="btn book_btn" value="Đặt vé">
             ';
         }
@@ -104,5 +117,13 @@
         }
         seat_selected.value = seats.join(' ')
         calcTotalPrice(seats.length)
+    }
+    const ticket = document.querySelector('#ticket')
+    ticket.addEventListener('submit', (e) => checkTicket(e))
+    const checkTicket = (e) => {
+        if(seats.length == 0 ) {
+            e.preventDefault();
+            alert("Bạn chưa chọn ghế nào")
+        }
     }
 </script>
