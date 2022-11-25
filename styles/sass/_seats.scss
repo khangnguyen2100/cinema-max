@@ -98,6 +98,13 @@ button.active {
 }
 button.has_sold {
   background-color: red;
+  cursor: not-allowed !important;
+  user-select: none !important;
+  color : #fff !important;
+  cursor: not-allowed;
+  &:hover {
+    background-color: red !important;
+  }
 }
 
 .note1 .box-color {
@@ -110,7 +117,7 @@ button.has_sold {
   background-color: rgb(248, 241, 241);
 }
 .note4 .box-color {
-  background-color: rgb(62, 62, 250);
+  background-color: rgb(129, 129, 201);
 }
 .seat-container button {
   color : #333;

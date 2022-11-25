@@ -13,7 +13,8 @@
 
 <?php
 include_once('../module/function.php');
-include '../module/connectDb.php';
+include_once '../module/connectDb.php';
+
 if (isset($_SESSION['admin'])) {
   unset($_SESSION['admin']);
 }

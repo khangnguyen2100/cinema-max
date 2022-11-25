@@ -24,7 +24,7 @@
 
         <ul class="nav navbar-nav">
           <li class=""><a href="#">Mua vé</a></li>
-          <li><a href="#">Phim</a></li>
+          <li><a href="./index.php?page=rap">Rạp Phim</a></li>
           <li><a href="#">Góc Điện Ảnh</a></li>
           <li><a href="#">Thành Viên</a></li>
           <?php

@@ -17,10 +17,18 @@ if (isset($_SESSION['admin']) && $_SESSION['admin'] !== '' || isset($_SESSION['u
         <div class="linealphabet">
             <?php
             $alphas = range('A', 'J');
+            $start_time_id = $_GET['start_time_id'];
+            $seat_solded = action("SELECT * FROM seats WHERE start_times_id = $start_time_id")[0]["seat_has_solded"];
+            $seat_solded_list = explode(" ", $seat_solded);
             foreach ($alphas as $key => $alpha) {
                 $seat = '';
                 for ($i = 1; $i < 13; $i++) {
-                    $seat .= '<button type="submit" data-status="available" data-name="' . $alpha . $i . '" onclick="handleClickSeat(this);">' . $i . '</button>';
+                    $name_seat = $alpha . $i;
+                    if(in_array($name_seat, $seat_solded_list)) {
+                        $seat .= '<button type="submit" disabled="disabled" class="has_sold" data-status="unavailable" data-name="' . $name_seat . '" onclick="handleClickSeat(this);">' . $i . '</button>';
+                    }  else {
+                        $seat .= '<button type="submit"  data-status="available" data-name="' . $name_seat . '" onclick="handleClickSeat(this);">' . $i . '</button>';
+                    }
                 }
                 echo '
                 <div class="line">
