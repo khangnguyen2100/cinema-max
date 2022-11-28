@@ -27,17 +27,20 @@ function total($sql)
   $result = $stmt->fetchColumn();
   return $result;
 }
-function createId()
-{
-  return abs(crc32(uniqid()));
+function createId() {
+  $id = abs(crc32(uniqid()));
+  if($id == 2140685257 || $id == 2147483647) {
+    return abs(crc32(uniqid()));
+  } else {
+    return $id;
+  }
 }
 function validate()
 {
 }
-function validString($string)
-{
-  $str  = trim($string);
-  return $str !== '';
+function validString($string) {
+  $str = trim($string);
+  return $str;
 }
 function validNumber($num)
 {

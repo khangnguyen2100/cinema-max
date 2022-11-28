@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/khangnguyen2100/cinema-max/issues"
   },
-  "homepage": "https://github.com/khangnguyen2100/cinema-max#readme"
+  "homepage": "https://github.com/khangnguyen2100/cinema-max#readme",
+  "dependencies": {
+    "qrcode-generator": "^1.4.4"
+  }
 }

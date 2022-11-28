@@ -1,426 +1,519 @@
+<!-- sản phẩm-->
   <!--slide-->
   <style>
-    .navbar-brand {
-      font-size: 22px;
-      font-weight: bold;
-    }
 
-    .navbar {
-      margin-bottom: 0 !important;
-      background: rgba(21, 31, 50, 1) !important;
-      padding: 10px 0 !important;
-    }
+img {
+  vertical-align: middle;
+}
 
-    .navbar-brand {
-      color: primary_color !important;
-    }
+/* Position the image container (needed to position the left and right arrows) */
+.container {
+  position: relative;
+}
 
-    .navbar-nav a {
-      font-size: 16px !important;
-    }
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
 
-    a:hover {
-      color: primary_color !important;
-    }
+/* Add a pointer when hovering over the thumbnail images */
+.cursor {
+  cursor: pointer;
+}
 
-    img {
-      vertical-align: middle;
-    }
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
 
-    /* Position the image container (needed to position the left and right arrows) */
-    .container {
-      position: relative;
-    }
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
 
-    /* Hide the images by default */
-    .mySlides {
-      display: none;
-    }
-
-    /* Add a pointer when hovering over the thumbnail images */
-    .cursor {
-      cursor: pointer;
-    }
-
-    /* Next & previous buttons */
-    .prev,
-    .next {
-      cursor: pointer;
-      position: absolute;
-      top: 40%;
-      width: auto;
-      padding: 16px;
-      margin-top: -50px;
-      color: white;
-      font-weight: bold;
-      font-size: 20px;
-      border-radius: 0 3px 3px 0;
-      user-select: none;
-      -webkit-user-select: none;
-    }
-
-    /* Position the "next button" to the right */
-    .next {
-      right: 0;
-      border-radius: 3px 0 0 3px;
-    }
-
-    /* On hover, add a black background color with a little bit see-through */
-    .prev:hover,
-    .next:hover {
-      background-color: rgba(0, 0, 0, 0.8);
-    }
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
 
 
-    .numbertext {
-      color: #f2f2f2;
-      font-size: 12px;
-      padding: 8px 12px;
-      position: absolute;
-      top: 0;
-    }
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
 
 
-    .caption-container {
-      text-align: center;
-      background-color: #222;
-      padding: 2px 16px;
-      color: white;
-    }
+.caption-container {
+  text-align: center;
+  background-color: #222;
+  padding: 2px 16px;
+  color: white;
+}
 
-    .row:after {
-      content: "";
-      display: table;
-      clear: both;
-    }
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
 
 
-    .column {
-      float: left;
-      width: 16.66%;
-    }
+.column {
+  float: left;
+  width: 16.66%;
+}
 
-    .demo {
-      opacity: 0.6;
-    }
+.demo {
+  opacity: 0.6;
+}
 
-    .active,
-    .demo:hover {
-      opacity: 1;
-    }
-  </style>
-  <h2 style="text-align:center" <H2>NHỮNG BỘ PHIM HAY NHẤT</h2>
+.active,
+.demo:hover {
+  opacity: 1;
+}
 
-  <div class="container">
-    <div class="mySlides">
-      <div class="numbertext">1 / 6</div>
-      <img src="https://touchcinema.com/storage/phim-captain-america-noi-chien-sieu-anh-hung/phim-captain-america-noi-chien-sieu-anh-hung.jpg" style="width:100%" height="50%">
-    </div>
 
-    <div class="mySlides">
-      <div class="numbertext">2 / 6</div>
-      <img src="https://touchcinema.com/storage/phim-captain-america-noi-chien-sieu-anh-hung/phim-captain-america-noi-chien-sieu-anh-hung.jpg" style="width:100%" height="50%">
-    </div>
+.slide{
+	width: 1000px;
+	height: 300px;  
+	margin: auto;
+	overflow: hidden;
+	position: relative;
+}
+.slide ul{
+	position: absolute; 
+	top: 0;
+	left: 0;
+	width: 3000px;  
+}
+.slide ul li {
+	float: left;
+}
 
-    <div class="mySlides">
-      <div class="numbertext">3 / 6</div>
-      <img src="https://touchcinema.com/storage/phim-captain-america-noi-chien-sieu-anh-hung/phim-captain-america-noi-chien-sieu-anh-hung.jpg" style="width:100%">
-    </div>
+.prev, .next{
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	outline: none;
+	border: none;
+	background-color: transparent;
+	font-size: 32px;
+	color: #fff;
+	cursor: pointer;
+}
+.prev {
+	left: 0;
+}
+.next {
+	right: 0;
+}
 
-    <div class="mySlides">
-      <div class="numbertext">4 / 6</div>
-      <img src="https://touchcinema.com/storage/phim-captain-america-noi-chien-sieu-anh-hung/phim-captain-america-noi-chien-sieu-anh-hung.jpg" style="width:100%">
-    </div>
 
-    <div class="mySlides">
-      <div class="numbertext">5 / 6</div>
-      <img src="https://touchcinema.com/storage/phim-captain-america-noi-chien-sieu-anh-hung/phim-captain-america-noi-chien-sieu-anh-hung.jpg" style="width:100%">
-    </div>
+#slider-wrapper {
+  width: 940px;
+  height: 470px;
+  margin: 50px auto;
+  position: relative;
+  margin-bottom: 0px;
+  background: rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+}
 
-    <div class="mySlides">
-      <div class="numbertext">6 / 6</div>
-      <img src="https://touchcinema.com/storage/phim-captain-america-noi-chien-sieu-anh-hung/phim-captain-america-noi-chien-sieu-anh-hung.jpg" style="width:100%">
-    </div>
+#s1 {
+  padding: 6px;
+  background: #000000;
+  position: absolute;
+  left: 50%;
+  bottom: 25px;
+  margin-left: -36px;
+  border-radius: 20px;
+  opacity: 0.3;
+  cursor: pointer;
+  z-index: 999;
+}
 
-    <a class="prev" onclick="plusSlides(-1)">❮</a>
-    <a class="next" onclick="plusSlides(1)">❯</a>
+#s2 {
+  padding: 6px;
+  background: #000000;
+  position: absolute;
+  left: 50%;
+  bottom: 25px;
+  margin-left: -12px;
+  border-radius: 20px;
+  opacity: 0.3;
+  cursor: pointer;
+  z-index: 999;
+}
 
-    <div class="caption-container">
-      <p id="caption"></p>
-    </div>
+#s3 {
+  padding: 6px;
+  background: #000000;
+  position: absolute;
+  left: 50%;
+  bottom: 25px;
+  margin-left: 12px;
+  border-radius: 20px;
+  opacity: 0.3;
+  cursor: pointer;
+  z-index: 999;
+}
 
-    <div class="row">
-      <div class="column">
-        <img class="demo cursor" src="https://touchcinema.com/storage/phim-captain-america-noi-chien-sieu-anh-hung/phim-captain-america-noi-chien-sieu-anh-hung.jpg" style="width:100%" onclick="currentSlide(1)" alt="The Woods">
-      </div>
-      <div class="column">
-        <img class="demo cursor" src="https://touchcinema.com/storage/phim-captain-america-noi-chien-sieu-anh-hung/phim-captain-america-noi-chien-sieu-anh-hung.jpg" style="width:100%" onclick="currentSlide(2)" alt="Cinque Terre">
-      </div>
-      <div class="column">
-        <img class="demo cursor" src="https://touchcinema.com/storage/phim-captain-america-noi-chien-sieu-anh-hung/phim-captain-america-noi-chien-sieu-anh-hung.jpg" style="width:100%" onclick="currentSlide(3)" alt="Mountains and fjords">
-      </div>
-      <div class="column">
-        <img class="demo cursor" src="https://touchcinema.com/storage/phim-captain-america-noi-chien-sieu-anh-hung/phim-captain-america-noi-chien-sieu-anh-hung.jpg" style="width:100%" onclick="currentSlide(4)" alt="Northern Lights">
-      </div>
-      <div class="column">
-        <img class="demo cursor" src="https://touchcinema.com/storage/phim-captain-america-noi-chien-sieu-anh-hung/phim-captain-america-noi-chien-sieu-anh-hung.jpg" style="width:100%" onclick="currentSlide(5)" alt="Nature and sunrise">
-      </div>
-      <div class="column">
-        <img class="demo cursor" src="https://touchcinema.com/storage/phim-captain-america-noi-chien-sieu-anh-hung/phim-captain-america-noi-chien-sieu-anh-hung.jpg" style="width:100%" onclick="currentSlide(6)" alt="Snowy Mountains">
-      </div>
+#s4 {
+  padding: 6px;
+  background: #000000;
+  position: absolute;
+  left: 50%;
+  bottom: 25px;
+  margin-left: 36px;
+  border-radius: 20px;
+  opacity: 0.3;
+  cursor: pointer;
+  z-index: 999;
+}
+
+#s1:hover,
+#s2:hover,
+#s3:hover,
+#s4:hover {
+  opacity: .50;
+}
+
+.inner-wrapper {
+  width: 940px;
+  height: 470px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-bottom: 0px;
+  overflow: hidden;
+}
+
+.control {
+  display;
+}
+
+#Slide1:checked ~ .overflow-wrapper {
+  margin-left: 0%;
+}
+
+#Slide2:checked ~ .overflow-wrapper {
+  margin-left: -100%;
+}
+
+#Slide3:checked ~ .overflow-wrapper {
+  margin-left: -200%;
+}
+
+#Slide4:checked ~ .overflow-wrapper {
+  margin-left: -300%;
+}
+
+#Slide1:checked + #s1 {
+  opacity: 1;
+}
+
+#Slide2:checked + #s2 {
+  opacity: 1;
+}
+
+#Slide3:checked + #s3 {
+  opacity: 1;
+}
+
+#Slide4:checked + #s4 {
+  opacity: 1;
+}
+
+.overflow-wrapper {
+  width: 400%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow-y: hidden;
+  z-index: 1;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  animation-delay: 3s;
+}
+
+.slide img {
+  width: 25%;
+  float: left;
+  animation-delay: 3s;
+}
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+</style>
+<BR>
+<center>
+<h1><b>NHỮNG BỘ PHIM HAY MỚI NHẤT 2023</b></h1>
+<div id="slider-wrapper">
+  <div class="inner-wrapper">
+    <input checked type="radio" name="slide" class="control" id="Slide1" />
+    <label for="Slide1" id="s1"></label>
+    <input type="radio" name="slide" class="control" id="Slide2" />
+    <label for="Slide2" id="s2"></label>
+    <input type="radio" name="slide" class="control" id="Slide3" />
+    <label for="Slide3" id="s3"></label>
+    <input type="radio" name="slide" class="control" id="Slide4" />
+    <label for="Slide4" id="s4"></label>
+    <div class="overflow-wrapper">
+      <a class="slide" href=""><img src="http://3.bp.blogspot.com/-d-iILl7ujck/Ucmb6q3iC9I/AAAAAAAAA18/Mo4fLPrSb4E/s1600/hinh-nen-may-tinh-poster-phim-13.jpg" /></a>
+      <a class="slide" href=""><img src="/940x470" /></a>
+      <a class="slide" href=""><img src="https://static.mservice.io/blogscontents/momo-upload-api-210608145446-637587608861472346.jpg" /></a>
+      <a class="slide" href=""><img src="http://placehold.it/940x470" /></a>
     </div>
   </div>
+</div>
+<br>
 
-  <script>
-    let slideIndex = 1;
-    showSlides(slideIndex);
-
-    function plusSlides(n) {
-      showSlides(slideIndex += n);
-    }
-
-    function currentSlide(n) {
-      showSlides(slideIndex = n);
-    }
-
-    function showSlides(n) {
-      let i;
-      let slides = document.getElementsByClassName("mySlides");
-      let dots = document.getElementsByClassName("demo");
-      let captionText = document.getElementById("caption");
-      if (n > slides.length) {
-        slideIndex = 1
-      }
-      if (n < 1) {
-        slideIndex = slides.length
-      }
-      for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-      }
-      for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
-      }
-      slides[slideIndex - 1].style.display = "block";
-      dots[slideIndex - 1].className += " active";
-      captionText.innerHTML = dots[slideIndex - 1].alt;
-    }
-  </script>
-
-  <style>
-    .phim1 h2 {
-      text-align: center;
-    }
-
-    .phim1>hr {
-      width: 130px;
-      background-color: red;
-      height: 2px;
-
-    }
-  </style>
-
-  <div class="phim đang chiếu ">
-    <div class="phim1">
-      <h2>Phim đang chiếu </h2>
-      <hr>
-    </div>
-
-
-    <style>
-      .thanh1 {
-        float: right;
-        padding-top: 0px;
-      }
-
-      .thanh1 h1 {
-        border-style: double;
-        width: 350px;
-        height: 200px;
-      }
-
-      .thanh1 h1 p input {
-        border: 0ch;
-        width: 300px;
-        height: 50px;
-        background-color: rgb(196, 193, 190);
-      }
-
-      .thanh1 h1 input {
-        border: 0ch;
-        width: 300px;
-        height: 50px;
-        background-color: rgb(255, 119, 0);
-      }
-
-      .thanh2 {
-        padding-right: 260px;
-        float: right;
-        padding-top: 4%;
-      }
-
-      .thanh3 {
-        display: flex;
-        align-items: flex-start;
-        width: 100%;
-        flex-direction: column;
-      }
-
-      .form-group {
-        color: #222;
-      }
-
-      .form-group select,
-      .form-group input {
-        width: 300px;
-        height: 40px;
-        border-color: none;
-      }
-
-      .thanh5 {
-        float: right;
-        height: 30px;
-      }
-
-      .thanh5 input {
-        height: 37px;
-      }
-
-      .thanh4 input {
-        height: 35px;
-      }
-
-      .form-group input {
-        margin-left: 15px;
-      }
-
-      .thanh5 {
-        margin-left: 2000px;
-        padding-right: 150px;
-      }
-
-      .form-buton {
-        background-color: rgb(255, 119, 0);
-        border: 0ch;
-        width: 200px;
-        height: 50px;
-        font-weight: 200;
-        text-align: left;
-      }
-
-      .times-container {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        margin-bottom: 30px;
-      }
-
-      .times-container .theader-name {
-        font-size: 18px;
-        color: #fff;
-        background-color: #F56857;
-        padding: 7px 20px;
-      }
-
-      .times-container .times {
-        width: 100%;
-        background-color: #151F32;
-        border: 1px solid #ced0da;
-        padding: 35px 20px 25px;
-        display: flex;
-        align-items: center;
-        column-gap: 30px;
-        border-radius: 0 10px 10px 10px;
-      }
-
-      .times-container .times .times-content {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        column-gap: 15px;
-      }
-
-      .times-container .times .times-content a {
-        border: 1px solid #ced0da;
-        padding: 5px 10px;
-        transition: all 0.2s ease;
-        cursor: pointer;
-        color: #fff;
-      }
-
-      .times-container .times .times-content a:hover {
-        border: 1px solid #F56857;
-        color: #F56857;
-        transition: all 0.2s ease;
-      }
-
-
-      .thanh6 p {
-        border: groove;
-        margin-top: -1px;
-        width: 750px;
-        height: 100px;
-        text-align: left;
-        padding: 20px;
-      }
-
-      .thanh6 input {
-        text-align: 50px;
-        width: 70px;
-        height: 30px;
-        background-color: 0px;
-      }
-    </style>
-    <center>
-      <div class="thanh4">
-
-        <hr width="5%" size="3px" align="left" color="red" />
+    <div class="thanh4">
+        
+       <H2>Phim Đang chiếu</h2>
+      <hr width="50px"  color="red">
         <div class="form-group">
-          <select name="cả nước">
-            <option value="0">Chọn tỉnh </option>
-            <option value="1">TPHCM</option>
-            <option value="2">Hà nội</option>
-            <option value="3">Cần Thơ</option>
-          </select>
+            <select name="cả nước">
+                <option value="0">Chọn tỉnh</option>
+                <option value="1">TPHCM </option>
+                <option value="2">Hà nội</option>
+                <option value="3">Cần Thơ</option>
+            </select>
+            
+            </select>
+           
 
-          </select>
+            <style>
+            
+              
+             
+              .thanh8{
+            background-color: #f2f2f2;
+                width: 800px;
+                height: 600px;
+        
+          border: inset;
+              }
+              .thanh8 tr th{
+                padding: 20px;
+
+              }
+              .thanh8 h1{
+          padding: 2%;
+                text-align: left;
+              background-color: chocolate;
+              width: 400px;
+              }
+
+            .thanh9{
+              background-color: #f2f2f2;
+                width: 800px;
+                height: 600px;
+            
+            
+          border: inset;
+              }
+              .thanh9 tr th{
+                padding: 20px;
+
+              }
+              .thanh9 h1{
+          padding: 2%;
+                text-align: left;
+              background-color: chocolate;
+              width: 450px;
+              }
+            </style>
+            <br>
+            <br>
+            <div class="thanh8">
+
+            <?php  
+//mở kết nối
+  $conn= mysqli_connect('localhost','root','', 'cinema-max');
+// xây dựng thực thi truy vấn
+$sql="select * from movie";
 
 
-          <br>
-          <br>
-          <?php
+$recordset =mysqli_query($conn, $sql);
+?>
+<table border="0">
+  <h1 >GALAXY TÂN BÌNH</h1>
+ <tr>
+  <th>name</th>
+  <th>label</th>
+  <th>time</th>
+  <th>star</th>
+ </tr>
+ 
+ <?php
+ while($row = mysqli_fetch_assoc($recordset)){
+?>
+<tr>
+  <td><?php echo $row ['name'];?></td>
+  <td><?php echo $row ['label'];?></td>
+  <td><?php echo $row ['time'];?></td>
+  <td><?php echo $row ['star'];?></td>
+</tr>
+<?php
+ }
+ ?>
+</table>
+<?php
+// đóng kết nối
+mysqli_close($conn);
+?>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="thanh9">
+<?php  
+//mở kết nối
+  $conn= mysqli_connect('localhost','root','', 'cinema-max');
+// xây dựng thực thi truy vấn
+$sql="select * from movie";
 
-          //mở kết nối
-          $conn = mysqli_connect('localhost', 'root', '', 'cinema-max');
-          // xây dựng thực thi truy vấn
-          $sql = "select * from movie";
 
-          $recordset = mysqli_query($conn, $sql);
-          ?>
-          <table border="1">
-            <tr>
-              <th>name</th>
-              <th>label</th>
-              <th>time</th>
-              <th>star</th>
-            </tr>
-            <?php
-            while ($row = mysqli_fetch_assoc($recordset)) {
-            ?>
-              <tr>
-                <td><?php echo $row['name']; ?></td>
-                <td><?php echo $row['label']; ?></td>
-                <td><?php echo $row['time']; ?></td>
-                <td><?php echo $row['star']; ?></td>
-              </tr>
-            <?php
-            }
-            ?>
-          </table>
-          <?php
-          // đóng kết nối
-          mysqli_close($conn);
-          ?>
+$recordset =mysqli_query($conn, $sql);
+?>
+<table border="0">
+  <h1 >GALAXY BÌNH DƯƠNG</h1>
+ <tr>
+  <th>name</th>
+  <th>label</th>
+  <th>time</th>
+  <th>star</th>
+ </tr>
+ 
 
-    </center>
-  </div>
-  </div>
+
+ <?php
+ while($row = mysqli_fetch_assoc($recordset)){
+?>
+<tr>
+  <td><?php echo $row ['name'];?></td>
+  <td><?php echo $row ['label'];?></td>
+  <td><?php echo $row ['time'];?></td>
+  <td><?php echo $row ['star'];?></td>
+</tr>
+<?php
+ }
+ ?>
+</table>
+<?php
+// đóng kết nối
+mysqli_close($conn);
+?>
+
+
+        </center>
+    </div>
+</div>
+</div>
+<script>
+  $(function(){
+	
+	var timer;
+	
+	var interval = 3000;
+	
+	var duration = 300;
+	
+	var dir = 1;
+	
+	
+	
+
+	$(".slide ul").prepend($(".slide li:last-child"));
+
+	$(".slide ul").css("left", -1000);
+	
+	timer = setInterval(slideTimer,interval);
+	
+
+	
+
+	function slideTimer(){
+		
+		if(dir == 1) {
+		
+			$(".slide ul").animate({"left" : "-=1000px"}, duration, function(){
+		
+			$(this).append($(".slide li:first-child"));
+		
+			$(this).css("left", -1000);
+			});
+		}else{
+			$(".slide ul").animate({"left" : "+=1000px"}, duration, function(){
+	
+			$(this).prepend($(".slide li:last-child"));
+			 
+			$(this).css("left", -1000);
+			});
+		}
+	}
+	
+	
+	$(".prev").click(function(){
+		
+		dir = -1;
+		
+		
+		clearInterval(timer);
+		timer = setInterval(slideTimer,interval);
+		
+		
+	    slideTimer();
+	});
+	
+	
+	$(".next").click(function(){
+		// 調整方向（向右）
+		dir = 1;
+		
+		
+		clearInterval(timer);
+		timer = setInterval(slideTimer,interval);
+		
+	
+		slideTimer();
+	});
+});
+
+
+</script>

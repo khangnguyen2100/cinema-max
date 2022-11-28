@@ -24,6 +24,9 @@
     case 'rap':
     	include './view/rap.php';
     	break;
+    case 'successful':
+    	include './view/successful.php';
+    	break;
     case 'login':
       header('Location: ./view/login.php');
       break;

@@ -31,7 +31,7 @@
           <a href="./index.php?page=movie" class="nav-link">Phim</a>
         </li>
         <li class="nav-item">
-          <a href="./index.php?page=comment" class="nav-link">Lịch Chiếu</a>
+          <a href="./index.php?page=lich_chieu" class="nav-link">Lịch Chiếu</a>
         </li>
         <li class="nav-item">
           <a href="./index.php?page=comment" class="nav-link">Bình luận</a>

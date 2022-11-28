@@ -1,9 +1,16 @@
 .movie-container {
   margin-top: 50px;
+  &-in {
+    display: flex;
+    align-items: flex-start;
+    column-gap: 30px;
+    max-width: 720px;
+    margin: 25px 0;
+  }
 }
-
-.thanh1 {
-  padding: 20px;
+.thanh3 {
+  max-width: 720px;
+  margin: 25px 0;
 }
 
 .form-button {
@@ -17,9 +24,7 @@
 }
 
 .thanh1 h1 {
-  border-style: double;
-  width: 350px;
-  height: 200px;
+  margin-top: 0;
 }
 
 .thanh1 h1 p input {
@@ -65,7 +70,9 @@
 .thanh5 input {
   height: 37px;
 }
-
+.thanh4 {
+  margin: 25px 0;
+}
 .thanh4 input {
   height: 35px;
 }
@@ -126,4 +133,7 @@
       }
     }
   }
+}
+.star-icon {
+  color :rgb(244, 203, 98);
 }

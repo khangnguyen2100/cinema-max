@@ -18,7 +18,11 @@ if (isset($_SESSION['admin']) && $_SESSION['admin'] !== '' || isset($_SESSION['u
             <?php
             $alphas = range('A', 'J');
             $start_time_id = $_GET['start_time_id'];
-            $seat_solded = action("SELECT * FROM seats WHERE start_times_id = $start_time_id")[0]["seat_has_solded"];
+            $seat_solded = '';
+            $get_seat_solded = action("SELECT * FROM seats WHERE start_times_id = $start_time_id");
+            if(count($get_seat_solded) > 0) {
+                $seat_solded = $get_seat_solded[0]["seat_has_solded"];
+            } 
             $seat_solded_list = explode(" ", $seat_solded);
             foreach ($alphas as $key => $alpha) {
                 $seat = '';

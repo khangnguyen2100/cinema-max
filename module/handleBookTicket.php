@@ -20,6 +20,6 @@
     VALUES ($id, $movie_id, $start_time_id, $theater_id, $user_id, $price, $amount)";
     echo $sql_bill;
     action($sql_bill);
-    // header('Location: index.php?page='.$page);
+    header('Location: ../index.php?page=successful&id='.$id.'');
   }
 ?>

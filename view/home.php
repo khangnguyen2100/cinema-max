@@ -54,7 +54,7 @@
               frameborder="0" 
               referrerpolicy="origin-when-cross-origin"
               allowfullscreen="true"
-              src="https://www.youtube.com/embed/' . $trailer . '?hd=0&controls=0&mute=1&playsinline=1&loop=1&rel=0&modestbranding=0&autohide=1&showinfo=0&disablekb=1&enablejsapi=1&iv_load_policy=3&fs=0&playlist=' . $trailer . ''.$autoplay.'"
+              src="https://www.youtube.com/embed/' . $trailer . '?hd=1&controls=0&mute=1&playsinline=1&loop=1&rel=0&modestbranding=0&autohide=1&showinfo=0&disablekb=1&enablejsapi=1&iv_load_policy=3&fs=0&playlist=' . $trailer . ''.$autoplay.'"
               allow="autoplay"
             >
             </iframe>
