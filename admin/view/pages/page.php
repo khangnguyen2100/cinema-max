@@ -31,7 +31,7 @@
             extract($value);
             $string = '';
             foreach ($keys as $keyName => $name) {
-              if((str_contains($value[$name],'https') || str_contains($value[$name],'http')) && !str_contains($value[$name],'youtube')) {
+              if((strpos($value[$name],'https') || strpos($value[$name],'http')) && !strpos($value[$name],'youtube')) {
                 $string .= '
                   <td>
                     <img src=' . $value[$name] . ' class="'.$_GET['page'].'-img">
