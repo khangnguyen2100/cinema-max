@@ -29,7 +29,7 @@ function total($sql)
 }
 function createId() {
   $id = abs(crc32(uniqid()));
-  if($id == 2140685257 || $id == 2147483647) {
+  if($id == 2140685257 || $id == 2147483647) { 
     return abs(crc32(uniqid()));
   } else {
     return $id;

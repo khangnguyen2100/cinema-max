@@ -1,8 +1,7 @@
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
 <style>
   footer {
     color: aliceblue;
+    margin-top: 100px;
     position: relative;
     width: 100%;
     height: auto;

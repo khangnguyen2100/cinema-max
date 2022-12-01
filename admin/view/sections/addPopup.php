@@ -33,7 +33,7 @@
           </div>';
         }
 
-        if ($index !== 0) {
+        if ($index !== 0 && $inputType !== '') {
           echo '
           <div class="add-item">
             <label class="add-item-label">' . $key . ': </label>

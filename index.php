@@ -24,6 +24,9 @@
     case 'rap':
     	include './view/rap.php';
     	break;
+    case 'bill_confirm':
+    	include './view/bill_confirm.php';
+    	break;
     case 'successful':
     	include './view/successful.php';
     	break;

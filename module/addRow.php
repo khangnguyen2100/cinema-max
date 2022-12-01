@@ -12,13 +12,15 @@ function addRow() {
         $head .= 'id,';
         $body .=  $id. ' ,';
       } else {
-        $value = trim($_POST[$keyName]);
-        if ($key == count($keys) - 1) {
-          $head .= $keyName;
-          $body .= "'$value'";
-        } else {
-          $head .= $keyName . ',';
-          $body .= "'$value'" . ',';
+        if($keyName !== 'date') {
+          $value = trim($_POST[$keyName]);
+          if ($key == count($keys) - 1) {
+            $head .= $keyName;
+            $body .= "'$value'";
+          } else {
+            $head .= $keyName . ',';
+            $body .= "'$value'" . ',';
+          }
         }
       }
     }
@@ -28,8 +30,4 @@ function addRow() {
     action($sql);
     header('Location: index.php?page=' . $page);
   }
-  // if(isset($_GET['page']) && isset($_POST['close-icon']) && $_POST['close-icon']) {
-  //   $page = $_GET['page'];
-  //   header('Location: index.php?page='.$page);
-  // }
 }
