@@ -17,10 +17,10 @@ function connectDb(){
     $username = "b141be260bcad3";
     $databaseName = "heroku_590ab1bfc1ed2b1";
     $password = "d60dc9d4";
-    $port = '3306';
+    $port = '';
   }
   
-  $conn = new PDO("mysql:host=$serverName;$port dbname=$databaseName", $username, $password);
+  $conn = new PDO("mysql:host=$serverName;$port charset=utf8;dbname=$databaseName", $username, $password,);
   $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
   return $conn;
 }
