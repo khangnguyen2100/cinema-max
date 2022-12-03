@@ -111,7 +111,7 @@ include_once('../module/function.php');
             $mail->SMTPDebug = SMTP::DEBUG_SERVER;
 
             $mail->Host = 'smtp.gmail.com';
-            $mail->Port = 465;
+            $mail->Port = 587;
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
 
             $mail->SMTPAuth = true;
@@ -122,7 +122,6 @@ include_once('../module/function.php');
 
             $mail->setFrom('khangnhbps20165@fpt.edu.vn', 'Cinema-max');
 
-            $mail->addReplyTo('replyto@example.com', 'First Last');
 
             $mail->addAddress($email, $email);
             $mail->Subject = 'Đặt lại mật khẩu';
