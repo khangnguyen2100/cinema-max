@@ -54,24 +54,27 @@
             extract($value);
 
             date_default_timezone_set('Asia/Ho_Chi_Minh');
-            $timeLeft = (strtotime($time) - time())/60;
-            if($timeLeft > 15) {
+            $timeLeft = (strtotime($time) - time()) / 60;
+            if ($timeLeft > 15) {
                 $times_html .= '<a href="index.php?page=seats&movie_id=' . $movie_id . '&start_time_id=' . $id . '&theater_id=' . $theater_id . '">' . $time . '</a>';
             }
         }
-        echo '
+        if ($times_html !== '') {
+
+            echo '
             <div class="times-container">
             <div class="theader-name">' . $theader[0]['name'] . '</div>
             <div class="times">
-                <p>
-                    2D - Phụ đề
-                </p>
-                <div class="times-content">
-                ' . $times_html . '
-                </div>
+            <p>
+            2D - Phụ đề
+            </p>
+            <div class="times-content">
+            ' . $times_html . '
             </div>
-        </div>
-        ';
+            </div>
+            </div>
+            ';
+        } 
     }
 
 

@@ -16,8 +16,11 @@ include_once('../module/function.php');
 include_once '../module/connectDb.php';
 
 $db = connectDb();
-if (isset($_SESSION['user']) || isset($_SESSION['admin'])) {
-  header("Location:index.php");
+if (isset($_SESSION['user'])) {
+  header("Location: ../index.php");
+}
+if (isset($_SESSION['admin'])) {
+  header("Location: ../admin/index.php");
 }
 if (isset($_POST['login'])) {
   $email = $_POST['mail'];
