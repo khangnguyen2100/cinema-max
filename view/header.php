@@ -28,14 +28,12 @@
         <ul class="nav navbar-nav">
           <li class=""><a href="#">Mua vé</a></li>
           <li><a href="./index.php?page=rap">Rạp Phim</a></li>
-          <li><a href="#">Góc Điện Ảnh</a></li>
-          <li><a href="#">Thành Viên</a></li>
           <?php
             if(isset($_SESSION['admin']) || isset($_SESSION['user'])) {
               $email = getEmail();
               $firstLetter = substr($email,0,1);
               echo '
-                <li><a href="./view/login.php" class="avatar">
+                <li><a href="./index.php?page=user" class="avatar">
                 '.$firstLetter.'
                   <span class="tooltiptext">'.$email.'</span>
                 </a></li>

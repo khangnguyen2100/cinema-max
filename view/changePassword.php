@@ -15,9 +15,11 @@
       padding: 0;
       box-sizing: border-box;
     }
+
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
+
     .container {
       height: 100vh;
       width: 100%;
@@ -25,6 +27,7 @@
       justify-content: center;
       align-items: center;
     }
+
     .container-form {
       width: 400px;
       display: flex;
@@ -35,18 +38,21 @@
       padding: 25px;
       border-radius: 15px;
     }
+
     .heading-form {
       font-weight: 700;
       font-size: 36px;
-      color : orangered;
+      color: orangered;
       text-transform: capitalize;
     }
+
     .form-group {
       width: 100%;
       display: flex;
       justify-content: center;
       flex-direction: column;
     }
+
     .form-group input {
       font-size: 24px;
       margin-top: 5px;
@@ -54,40 +60,40 @@
       border-bottom: 1px solid orangered;
       outline: none;
     }
+
     .btn-form {
       width: 100%;
       padding: 10px 15px;
       border-radius: 5px;
       border: 0;
       background-color: #444;
-      color : #fff;
+      color: #fff;
       margin-top: 50px;
     }
-
   </style>
 </head>
 
 <body>
   <div class="container">
-    <form class="container-form" action="./changePassword.php" method="POST" class="form">
+    <form class="container-form" action="changePassword.php" method="POST" class="form">
       <h2 class="heading-form">
-        Change Password
+        Đổi mật khẩu
       </h2>
+      <!-- email -->
       <div class="form-group">
-        <label for="name">
-          Old password
+        <label for="old_password">
+          Mật khẩu cũ
         </label>
-        <input type="text" id="name" name="old_password">
+        <input type="text" id="old_password" name="old_password">
       </div>
-
       <div class="form-group">
         <label for="password">
-          New Password
+          Mật khẩu mới
         </label>
         <input type="text" id="password" name="new_password">
       </div>
       <div class="form-group">
-        <input type="submit" name="login" value='Change Password' class="btn-bg-form btn-form" />
+        <input type="submit" name="login" value='Xác nhận' class="btn-bg-form btn-form" style="cursor: pointer;" />
       </div>
     </form>
   </div>
@@ -95,27 +101,26 @@
 
 </html>
 <?php
-session_start();
-ob_start();
-$_SESSION['adminLoginState'] = false;
+include_once('../module/function.php');
 
-if (isset($_POST['login']) && $_POST['login']) {
-  $old_pass = $_POST['old_password'];
+$user = getUserInfo();
+if (isset($_POST['login']) && $_POST['login'] && $_POST['new_password'] !== '') {
+  $old_password = $_POST['old_password'];
   $new_pass = $_POST['new_password'];
-  if($old_pass == $_SESSION['admin_pass']) {
-    $_SESSION['admin_pass'] = $new_pass;
-    header('Location: ./login.php');
+  if ($old_password == $user['password']) {
+    $sql = "UPDATE user SET password = '" . $new_pass . "' WHERE id = " . $user['id'] . " ";
+    action($sql);
+    header('Location: ../index.php');
   } else {
     echo "
     <script type='text/javascript'>
       setTimeout(alertFunc, 200);
       function alertFunc() {
-        alert('Sai mật khẩu!')
+        alert('Sai thông tin!')
       }
     </script>
     ";
   }
-  
 }
 
 ?>

@@ -1,0 +1,82 @@
+.heading-block {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 25px;
+  a.btn {
+    padding: 5px 10px;
+    background-color: orangered;
+    color : #fff;
+  }
+}
+.form-user {
+  .heading {
+    text-transform: capitalize;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    margin-top: 0px;
+    display: inline-block;
+  }
+  .change_pass {
+    display: none;
+  }
+  .changePass {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  .changePass:checked ~.change_pass {
+    display: block;
+  }
+  margin-top: 30px;
+  display: flex;
+  align-items: flex-start;
+  column-gap: 100px;
+  .form-col {
+    min-width: 500px;
+    position: relative;
+  }
+  .form-group-container {
+    display: flex;
+    align-items: center;
+    column-gap: 25px;
+    width: 100%;
+  }
+  .form-group {
+    display: flex;
+    margin-bottom: 30px;
+    flex-direction: column;
+    width: 100%;
+    label {
+      font-size: 18px;
+      color : $primary_color;
+    }
+    input {
+      width: 100%;
+      border: #bbb 1px solid;
+      border-radius: 5px;
+      margin-left: 0;
+      padding-inline: 10px;
+      &:focus {
+        outline: none;
+        border: $primary_color 1px solid;
+      }
+      &:disabled {
+        color : gray;
+      }
+    }
+  }
+  .btn {
+    color : #fff;
+    background-color: $secondary_color;
+    padding: 10px 25px;
+    font-weight: 600;
+    font-size: 18px;
+    &:hover {
+      color : #fff;
+    }
+  }
+}

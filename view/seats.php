@@ -94,7 +94,8 @@ if (isset($_SESSION['admin']) && $_SESSION['admin'] !== '' || isset($_SESSION['u
                 <p class="seat_selected">
                     Ghế ngồi: <input type="text" id="selected"  class="input-text" name="selected" readonly />
                 </p>
-                <input type="text" name="ticket_price" class="total-price input-text" value="0" readonly />
+                <p class="total-price-to-show input-text"></p>
+                <input type="text" name="ticket_price" class="total-price input-text" value="0" readonly hidden />
                 <input type="submit" name="ticket" class="btn book_btn" value="Đặt vé">
             ';
         }
@@ -114,7 +115,8 @@ if (isset($_SESSION['admin']) && $_SESSION['admin'] !== '' || isset($_SESSION['u
     }
     const calcTotalPrice = (num) => {
         const total = document.querySelector('.total-price')
-        // total.value = formatPrice(+num * 75000)
+        const totalToShow = document.querySelector('.total-price-to-show')
+        totalToShow.innerText = formatPrice(+num * 75000)
         total.value = +num * 75000
     }
     const handleClickSeat = (e) => {

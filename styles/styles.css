@@ -598,3 +598,87 @@ button.has_sold:hover {
   font-size: 20px;
   font-weight: 500;
 }
+
+.heading-block {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 25px;
+}
+.heading-block a.btn {
+  padding: 5px 10px;
+  background-color: orangered;
+  color: #fff;
+}
+
+.form-user {
+  margin-top: 30px;
+  display: flex;
+  align-items: flex-start;
+  column-gap: 100px;
+}
+.form-user .heading {
+  text-transform: capitalize;
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  margin-top: 0px;
+  display: inline-block;
+}
+.form-user .change_pass {
+  display: none;
+}
+.form-user .changePass {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.form-user .changePass:checked ~ .change_pass {
+  display: block;
+}
+.form-user .form-col {
+  min-width: 500px;
+  position: relative;
+}
+.form-user .form-group-container {
+  display: flex;
+  align-items: center;
+  column-gap: 25px;
+  width: 100%;
+}
+.form-user .form-group {
+  display: flex;
+  margin-bottom: 30px;
+  flex-direction: column;
+  width: 100%;
+}
+.form-user .form-group label {
+  font-size: 18px;
+  color: rgb(50, 138, 241);
+}
+.form-user .form-group input {
+  width: 100%;
+  border: #bbb 1px solid;
+  border-radius: 5px;
+  margin-left: 0;
+  padding-inline: 10px;
+}
+.form-user .form-group input:focus {
+  outline: none;
+  border: rgb(50, 138, 241) 1px solid;
+}
+.form-user .form-group input:disabled {
+  color: gray;
+}
+.form-user .btn {
+  color: #fff;
+  background-color: #F56857;
+  padding: 10px 25px;
+  font-weight: 600;
+  font-size: 18px;
+}
+.form-user .btn:hover {
+  color: #fff;
+}

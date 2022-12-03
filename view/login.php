@@ -15,12 +15,6 @@
 include_once('../module/function.php');
 include_once '../module/connectDb.php';
 
-if (isset($_SESSION['admin'])) {
-  unset($_SESSION['admin']);
-}
-if (isset($_SESSION['user'])) {
-  unset($_SESSION['user']);
-}
 $db = connectDb();
 if (isset($_SESSION['user']) || isset($_SESSION['admin'])) {
   header("Location:index.php");
@@ -101,9 +95,8 @@ if (isset($_POST['register'])) {
           <?php if (isset($error)) { ?>
             <p class="alert alert-danger"><?= $error ?></p>
           <?php
-          } else {
-            echo "<p>Nếu bạn đã có tài khoản vui lòng đăng nhập bên dưới</p>";
-          } ?>
+          }?>
+          <a class="forgor_link" href="./forgotPassword.php">Quên mật khẩu?</a>
           <button type="submit" name="login" class="btn btn-danger">Đăng nhập</button>
         </div>
       </form>

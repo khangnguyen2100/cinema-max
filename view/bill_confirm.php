@@ -1277,7 +1277,7 @@
                         <div class="dotted-line"><b>Ghế: &nbsp' . $seats_info . '</b></div>
                     </div>
                     <div class="ticket-price-total">
-                        <p>Tổng: &nbsp' . $total_price . '</p>
+                        <p>Tổng: &nbsp' . formatPrice($total_price) . '</p>
                     </div>
                 ';
                 }

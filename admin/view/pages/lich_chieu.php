@@ -61,7 +61,7 @@
                     </a>
                   </td>
                   <td class="td-btn">
-                    <a class="delete-btn action-btn" href="./index.php?page=' . $_GET['page'] . '&mode=delete&rowId=' . $id . '" class="btn" name="delete">
+                    <a class="delete-btn action-btn" href="./index.php?page=' . $_GET['page'] . '&mode=delete&rowId=' . $show_time_id . '" class="btn" name="delete">
                       Delete
                     </a>
                   </td>
@@ -78,7 +78,7 @@
 
 <?php
 if (isset($_GET['mode']) && $_GET['mode'] == 'delete') {
-  include '.././module/deleteRow.php';
+  include '.././module/delete.showtime.php';
   deleteRow($_GET['page']);
 }
 if (isset($_GET['mode']) && $_GET['mode'] == 'add') {

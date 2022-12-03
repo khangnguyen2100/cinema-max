@@ -52,7 +52,12 @@
 
         foreach ($start_times as $key => $value) {
             extract($value);
-            $times_html .= '<a href="index.php?page=seats&movie_id=' . $movie_id . '&start_time_id=' . $id . '&theater_id=' . $theater_id . '">' . $time . '</a>';
+
+            date_default_timezone_set('Asia/Ho_Chi_Minh');
+            $timeLeft = (strtotime($time) - time())/60;
+            if($timeLeft > 15) {
+                $times_html .= '<a href="index.php?page=seats&movie_id=' . $movie_id . '&start_time_id=' . $id . '&theater_id=' . $theater_id . '">' . $time . '</a>';
+            }
         }
         echo '
             <div class="times-container">

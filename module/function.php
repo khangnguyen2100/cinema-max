@@ -56,6 +56,19 @@ function getEmail()
   }
   return "";
 }
+function getUserInfo() {
+  $mail = getEmail();
+  if($mail) {
+    $users = action("SELECT * FROM user WHERE email = '$mail'")[0];
+    if(count($users) > 0) {
+      return $users;
+    }
+  }
+  return [];
+}
+function randomString($length = 10) {
+  return substr(str_shuffle(str_repeat($x='0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ', ceil($length/strlen($x)) )),1,$length);
+}
 function formatPrice($num)
 {
   if (is_numeric($num)) {

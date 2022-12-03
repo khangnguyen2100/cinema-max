@@ -249,6 +249,10 @@ footer a {
   color: #3c97bf;
   text-decoration: none;
 }
+.forgor_link {
+  display: block;
+  text-align: left;
+}
 .add-wrapper {
   width: 100%;
   display: flex;

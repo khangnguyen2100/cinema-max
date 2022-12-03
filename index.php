@@ -27,6 +27,9 @@
     case 'bill_confirm':
     	include './view/bill_confirm.php';
     	break;
+    case 'user':
+    	include './view/user.php';
+    	break;
     case 'successful':
     	include './view/successful.php';
     	break;
