@@ -12,10 +12,11 @@ function connectDb(){
     $port = '';
   } else {
     // production
-    $serverName = "sql6.freemysqlhosting.net";
-    $username = "sql6581942";
-    $databaseName = "sql6581942";
-    $password = "H24G8SuNyG";
+    //  mysql://b141be260bcad3:d60dc9d4@us-cdbr-east-06.cleardb.net/heroku_590ab1bfc1ed2b1?reconnect=true
+    $serverName = "us-cdbr-east-06.cleardb.net";
+    $username = "b141be260bcad3";
+    $databaseName = "heroku_590ab1bfc1ed2b1";
+    $password = "d60dc9d4";
     $port = '3306';
   }
   
