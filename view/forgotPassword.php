@@ -63,21 +63,40 @@ include_once('../module/function.php');
 
     .form-group input {
       font-size: 24px;
-      margin-top: 5px;
+      margin-top: 15px;
       border: 0;
       border-bottom: 1px solid orangered;
       outline: none;
     }
-
+    .btn-form a {
+      color : #fff ;
+      text-decoration: none ;
+    }
+    .actions input {
+      background-color : rgba(50, 138, 241, 1) !important;
+      font-weight: 700;
+    }
     .btn-form {
-      width: 100%;
-      padding: 10px 15px;
+      font-size: 16px !important;
+      margin-top: 0 !important;
+      width: 48%;
+      height: 45px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       border-radius: 5px;
       border: 0;
       background-color: #444;
       color: #fff;
-      margin-top: 50px;
     }
+    .actions {
+      margin-top: 30px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+  
   </style>
 </head>
 
@@ -93,7 +112,10 @@ include_once('../module/function.php');
         </label>
         <input type="email" id="email" required name="email">
       </div>
-      <div class="form-group">
+      <div class="form-group actions">
+        <div class="btn-bg-form btn-form" style="cursor: pointer;">
+          <a href="./login.php">Quay lại</a>
+        </div>
         <input type="submit" name="login" value='Reset mật khẩu' class="btn-bg-form btn-form" style="cursor: pointer;" />
       </div>
       <div>
@@ -109,16 +131,17 @@ include_once('../module/function.php');
 
             $mail->isSMTP();
             $mail->SMTPDebug = SMTP::DEBUG_SERVER;
-
+            $mail->SMTPSecure = 'tls';
             $mail->Host = 'smtp.gmail.com';
+            $mail->Mailer = "smtp";
             $mail->Port = 587;
-            $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+            // $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
 
             $mail->SMTPAuth = true;
             $mail->Username = 'khangnhbps20165@fpt.edu.vn';
 
             //Password to use for SMTP authentication
-            $mail->Password = 'taokhongcho';
+            $mail->Password = 'Gigana123#';
 
             $mail->setFrom('khangnhbps20165@fpt.edu.vn', 'Cinema-max');
 
