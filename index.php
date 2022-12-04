@@ -11,8 +11,7 @@
   }
   
   include './view/header.php';
-  echo getenv('email');
-  echo 123;
+  
   switch ($page) {
     case '':
       include './view/home.php';

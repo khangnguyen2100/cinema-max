@@ -125,6 +125,8 @@ include_once('../module/function.php');
           $user = action("SELECT * FROM user WHERE email = '$email'");
           if (count($user) > 0) {
             ob_start();
+            $email = getenv('email');
+            $email_password = getenv('email_password');
             $mail = new PHPMailer();
             $mail->CharSet = 'UTF-8';
             $mail->Encoding = 'base64';
@@ -138,12 +140,12 @@ include_once('../module/function.php');
             // $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
 
             $mail->SMTPAuth = true;
-            $mail->Username = 'khangnhbps20165@fpt.edu.vn';
+            $mail->Username = $email;
 
             //Password to use for SMTP authentication
-            $mail->Password = 'Gigana123#';
+            $mail->Password = $email_password;
 
-            $mail->setFrom('khangnhbps20165@fpt.edu.vn', 'Cinema-max');
+            $mail->setFrom($email, 'Cinema-max');
 
 
             $mail->addAddress($email, $email);
