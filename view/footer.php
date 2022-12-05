@@ -1,127 +1,91 @@
 <style>
+  .cot1 {
+    float: left;
+    margin: 60px;
+    color: white;
+  }
+  .cot2 {
+    float: left;
+    margin: 60px;
+    color: white;
+  }
 
-  .footer {
-    position: relative;
+  .cot3 {
+    float: left;
+    margin: 60px;
+    color: white;
+  }
+
+  .cuối {
+    color: white;
+  }
+
+  .logo {
+    color: blue;
+  }
+
+  .logo-img {
+    width: 30px;
+    height: 30px;
+  }
+  .cuoi {
+    color: white;
+  }
+
+  footer {
     width: 100%;
-    margin-top: 250px;
-    background: #3586ff;
-    min-height: 10px;
-    padding: 20px 50px;
-    padding-bottom: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-  }
-
-  .menu {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 10px 0;
-    flex-wrap: wrap;
-  }
-
-  .social-icon__item,
-  .menu__item {
-    list-style: none;
-  }
-
-  .menu__link {
-    color: #fff !important;
-    margin: 0 20px;
-    font-size: 18px;
-    font-weight: 600;
-    display: inline-block;
-    transition: 0.5s;
-    text-decoration: none;
-    opacity: 0.75;
-    font-weight: 300;
-  }
-
-  .menu__link:hover {
-    opacity: 1;
-  }
-
-  .footer p {
-    color: #fff;
-    margin: 15px 0 10px 0;
-    font-size: 1rem;
-    font-weight: 300;
-  }
-
-  .wave {
-    position: absolute;
-    top: -100px;
-    left: 0;
-    width: 100%;
-    height: 100px;
-    background: url("https://i.ibb.co/wQZVxxk/wave.png");
-    background-size: 1000px 100px;
-  }
-
-  .wave#wave1 {
-    z-index: 1000;
-    opacity: 1;
-    bottom: 0;
-    animation: animateWaves 4s linear infinite;
-  }
-
-  .wave#wave2 {
-    z-index: 999;
-    opacity: 0.5;
-    bottom: 10px;
-    animation: animate 4s linear infinite !important;
-  }
-
-  .wave#wave3 {
-    z-index: 1000;
-    opacity: 0.2;
-    bottom: 15px;
-    animation: animateWaves 3s linear infinite;
-  }
-
-  .wave#wave4 {
-    z-index: 999;
-    opacity: 0.7;
-    bottom: 20px;
-    animation: animate 3s linear infinite;
-  }
-
-  @keyframes animateWaves {
-    0% {
-      background-position-x: 1000px;
-    }
-
-    100% {
-      background-positon-x: 0px;
-    }
-  }
-
-  @keyframes animate {
-    0% {
-      background-position-x: -1000px;
-    }
-
-    100% {
-      background-positon-x: 0px;
-    }
+    height: 350px;
+    background: rgb(21, 31, 50);
+    float: both;
+    margin-top: 150px;
   }
 </style>
+<footer>
 
-  <footer class="footer">
-    <div class="waves">
-      <div class="wave" id="wave1"></div>
-      <div class="wave" id="wave2"></div>
-      <div class="wave" id="wave3"></div>
-    </div>
-    <ul class="menu">
-      <li class="menu__item"><a class="menu__link" href="#">Trang Chủ</a></li>
-      <li class="menu__item"><a class="menu__link" href="#">Đặt vé</a></li>
-      <li class="menu__item"><a class="menu__link" href="#">Rạp</a></li>
-    </ul>
-  </footer>
+  <div class="cot1">
+    <h3>GIỚI THIỆU</h3>
+    》VỀ CHÚNG TÔI
+    <br><br>
+    》THỎA THUẬN VỀ SỬ DỤNG
+    <br><br>
+    》QUY CHẾ HOẠT ĐỘNG
+    <br><br>
+    》CHÍNH SÁCH BẢO MẬT
+  </div>
+
+  <div class="cot2">
+    <h3>GÓC ĐIỆN ẢNH</h3>
+    》THỂ LOẠI PHIM
+    <br><br>
+    》 BÌNH LUẬN PHIM
+    <br><br>
+    》 BLOG ĐIỆN ẢNH
+    <br><br>
+    》 PHIM HAY THÁNG
+  </div>
+
+  <div class="cot3">
+    <h3>HỖ TRỢ </h3>
+    》 GÓP Ý
+    <br><br>
+    》SALE&SERVICES
+    <br><br>
+    》RẠP/GIÁ VÉ
+    <br><br>
+    》TUYỂN DỤNG
+  </div>
+
+  <div class="cot3">
+    <h3>KẾT NỐI GALAXY CINEMA </h3>
+    <img class="logo-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/F_icon.svg/1200px-F_icon.svg.png" alt="" width="50px" height="50px">
+    &nbsp; &nbsp;&nbsp;<img class="logo-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/2048px-Instagram_logo_2016.svg.png" alt="" width="50px" height="50px">
+    &nbsp;&nbsp; <img class="logo-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/YouTube_full-color_icon_%282017%29.svg/2560px-YouTube_full-color_icon_%282017%29.svg.png" alt="" width="50px" height="50px">
+    <h3>DOWNLOAD APP </h3>
+    <img class="logo-img" src="https://img.freepik.com/premium-vector/google-play-logo_578229-280.jpg?w=2000" alt="" width="50px" height="50px">
+    &nbsp; &nbsp; <img class="logo-img" src="https://cdn-icons-png.flaticon.com/512/831/831276.png" alt="" width="50px" height="50px">
+
+  </div>
+</footer>
 </body>
 
 </html>
