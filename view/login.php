@@ -23,8 +23,8 @@ if (isset($_SESSION['admin'])) {
   header("Location: ../admin/index.php");
 }
 if (isset($_POST['login'])) {
-  $email = $_POST['mail'];
-  $password = $_POST['pass'];
+  $email = validString($_POST['mail']);
+  $password = validString($_POST['pass']);
   // handle login user
   $check = "SELECT * FROM user WHERE email = '$email' AND password = '$password' AND active = :active AND permission=:permission";
   $count = $db->prepare($check);
@@ -56,11 +56,11 @@ if (isset($_POST['login'])) {
 }
 
 if (isset($_POST['register'])) {
-  $name = $_POST['name'];
-  $email = $_POST['email'];
-  $password = $_POST['pass'];
-  $phone = $_POST['phone'];
-  $address = $_POST['address'];
+  $name = validString($_POST['name']);
+  $email = validString($_POST['email']);
+  $password = validString($_POST['pass']);
+  $phone = validString($_POST['phone']);
+  $address = validString($_POST['address']);
   $gender = $_POST['gender'];
   $date = $_POST['date'];
 
