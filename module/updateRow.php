@@ -15,8 +15,17 @@
       global $db;
       global $keys;
       $rowId = $_GET['rowId'];
-
       $body = '';
+      $check = true;
+      if($page == 'category') {
+        $check = checkDuplicate($page, 'name',$rowId);
+      }
+      if($page == 'theader') {
+        $check = checkDuplicate($page, 'name address', $rowId);
+      }
+      if($page == 'user') {
+        $check = checkDuplicate($page, 'phone_number email', $rowId);
+      }
       foreach ($keys as $key => $value) {
         if($key !== 0) {
           $key_value = trim($_POST[$value]);
@@ -27,12 +36,21 @@
           }
         }
       }
-      $sql = "UPDATE $page SET $body WHERE id = '". $rowId ."'" ;
-      $stmt = $db->prepare($sql);
-      $stmt->execute();
-      echo("<script>window.location.assign('index.php?page=$page');</script>");
+      if($check) {
+        $sql = "UPDATE $page SET $body WHERE id = '". $rowId ."'" ;
+        $stmt = $db->prepare($sql);
+        $stmt->execute();
+        header('Location: index.php?page=' . $page);
+      } else {
+        echo "
+        <script type='text/javascript'>
+          setTimeout(alertFunc, 200);
+          function alertFunc() {
+            alert('Thông tin bạn nhập trùng với dữ liệu đã có')
+          }
+        </script>
+        ";
+      }
+
     }
-    // if(isset($_POST['close-icon']) && $_POST['close-icon']) {
-    //   header("Location: index.php?page=$page");
-    // }
   }

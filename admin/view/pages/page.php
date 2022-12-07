@@ -18,11 +18,16 @@
             foreach ($keys as $key => $value) {
               echo '
                   <th>' . $value . '</th>
-                ';
+              ';
+            }
+            if($page !== 'bill') {
+              echo '
+                <th>Cập Nhật</th>
+                <th>Xóa</th>
+              ';
             }
             ?>
-            <th>Cập Nhật</th>
-            <th>Xóa</th>
+            
           </tr>
         </thead>
         <tbody>
@@ -49,21 +54,30 @@
                 }
               }
             }
-            echo '
+            if($page == 'bill') {
+              echo '
+              <tr>
+                ' . $string . '
+              </tr>
+              ';
+            } else {
+
+              echo '
               <tr>
               ' . $string . '
-                <td class="td-btn">
-                  <a class="update-btn action-btn" href="./index.php?page=' . $_GET['page'] . '&mode=update&rowId=' . $id . '" class="btn" name="update">
-                    Update
-                  </a>
-                </td>
-                <td class="td-btn">
-                  <a class="delete-btn action-btn" href="./index.php?page=' . $_GET['page'] . '&mode=delete&rowId=' . $id . '" class="btn" name="delete">
-                    Delete
-                  </a>
-                </td>
+              <td class="td-btn">
+              <a class="update-btn action-btn" href="./index.php?page=' . $_GET['page'] . '&mode=update&rowId=' . $id . '" class="btn" name="update">
+              Update
+              </a>
+              </td>
+              <td class="td-btn">
+              <a class="delete-btn action-btn" href="./index.php?page=' . $_GET['page'] . '&mode=delete&rowId=' . $id . '" class="btn" name="delete">
+              Delete
+              </a>
+              </td>
               </tr>
             ';
+          }
           }
           ?>
         </tbody>

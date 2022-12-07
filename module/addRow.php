@@ -6,6 +6,13 @@ function addRow() {
     $page = $_GET['page'];
     $head = '';
     $body = '';
+    $check = true;
+    if($page == 'category') {
+      $check = checkDuplicate($page, 'name');
+    }
+    if($page == 'theader') {
+      $check = checkDuplicate($page, 'name address');
+    }
     foreach ($keys as $key => $keyName) {
       $id = createId();
       if ($key === 0) {
@@ -24,10 +31,20 @@ function addRow() {
         }
       }
     }
-    $sql = "INSERT INTO " . $page . " ( $head )
-    VALUES ($body)";
-    echo $sql;
-    action($sql);
-    header('Location: index.php?page=' . $page);
+    if($check) {
+      $sql = "INSERT INTO " . $page . " ( $head )
+      VALUES ($body)";
+      action($sql);
+      header('Location: index.php?page=' . $page);
+    } else {  
+      echo "
+      <script type='text/javascript'>
+        setTimeout(alertFunc, 200);
+        function alertFunc() {
+          alert('Thông tin bạn nhập trùng với dữ liệu đã có')
+        }
+      </script>
+      ";
+    }
   }
 }

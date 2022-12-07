@@ -453,6 +453,7 @@ img {
   font-weight: 600;
   text-transform: capitalize;
   cursor: pointer;
+  border: 0 !important;
 }
 .action-btn {
   color : var(--primary-color);
