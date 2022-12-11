@@ -73,11 +73,6 @@
 </div>
 
 <div class="container text-center">
-  <div class="sections">
-    <h3 class="sections-name">Phim đang chiếu</h3>
-    <h3 class="sections-name">Phim sắp chiếu</h3>
-  </div>
-
   <div class="row">
     <?php
     $tableData = getAllTableData('movie');

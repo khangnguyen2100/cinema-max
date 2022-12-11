@@ -3,6 +3,9 @@
   justify-content: space-between;
   align-items: center;
   margin-top: 25px;
+  padding-bottom: 15px;
+  margin-bottom: 50px;
+  border-bottom: 1px solid #ddd;
   a.btn {
     padding: 5px 10px;
     background-color: orangered;
@@ -12,9 +15,8 @@
 .form-user {
   .heading {
     text-transform: capitalize;
-    font-size: 24px;
-    font-weight: 700;
-    margin-bottom: 20px;
+    font-size: 18px;
+    margin-bottom: 25px;
     margin-top: 0px;
     display: inline-block;
   }
@@ -31,7 +33,6 @@
   .changePass:checked ~.change_pass {
     display: block;
   }
-  margin-top: 30px;
   display: flex;
   align-items: flex-start;
   column-gap: 100px;
@@ -52,7 +53,7 @@
     width: 100%;
     label {
       font-size: 18px;
-      color : $primary_color;
+      color : #555;
     }
     input {
       width: 100%;
@@ -79,4 +80,77 @@
       color : #fff;
     }
   }
+}
+.user-nav {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  column-gap: 40px;
+  &-item { 
+    list-style-type: none;
+  }
+  &-link {
+    font-weight: 600;
+    font-size: 20px;
+    text-transform: capitalize;
+    color : $primary_color;
+    &:hover {
+      color : $primary_color;
+    }
+  }
+}
+.error {
+  color : orangered;
+  font-size: 14px;
+  font-style: italic;
+  font-weight: normal;
+  margin: 10px 0;
+}
+tbody tr {
+  max-height: 200px;
+  overflow: hidden;
+}
+thead tr th {
+  background: #ddd;
+  padding: 5px;
+  min-width: 80px;
+  text-align: center !important;
+}
+tbody tr td {
+  padding: 5px;
+  text-align: justify;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  min-width: 80px;
+}
+tbody tr td{
+  border: 1px solid #333;
+  border-top: 0;
+  border-right: 0;
+}
+tbody {
+  margin: 0 auto;
+}
+th {
+  text-transform: capitalize;
+}
+.td-btn button {
+  margin: auto;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+tbody tr td {
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom : auto;
+}
+tbody tr td:last-child {
+  border-right: 1px solid #333;
+}
+.table td:nth-child(2) {
+  overflow: hidden;
+  //white-space: nowrap;
+  text-overflow: ellipsis;
 }
