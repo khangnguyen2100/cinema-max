@@ -72,7 +72,7 @@
   <div class="swiper-pagination"></div>
 </div>
 
-<div class="container text-center">
+<div class="container text-center" style="margin-top : 100px">
   <div class="row">
     <?php
     $tableData = getAllTableData('movie');

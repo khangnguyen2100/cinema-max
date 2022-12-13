@@ -12,7 +12,6 @@ function connectDb(){
     $port = '';
   } else {
     // production
-    //  mysql://b141be260bcad3:d60dc9d4@us-cdbr-east-06.cleardb.net/heroku_590ab1bfc1ed2b1?reconnect=true
     $serverName = "us-cdbr-east-06.cleardb.net";
     $username = "b141be260bcad3";
     $databaseName = "heroku_590ab1bfc1ed2b1";
